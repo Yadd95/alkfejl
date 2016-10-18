@@ -1,12 +1,12 @@
-# FilmReviewer
+# MovieReviewer
 Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatókat, értékeléseket írni, ajánlási és pontozási rendszerrel.
 
 ## Funkcionális elvárások
 ### Felhasználóknak
 #### Profilkezelés
-- Profildatok szerkesztése (email, jelszó, bemutatkozás)
+- Profiladatok szerkesztése (email, jelszó, bemutatkozás)
 - Profilértékelések megtekintése (mennyien tekintették hasznosnak a bemutatóit, melyik a legelismertebb bemutatója)
-####
+#### d
 ### Vendégeknek
 - Regisztráció, bejelentkezés
 - Filmismertetők hasznosnak jelölése
