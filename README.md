@@ -17,16 +17,22 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 - Profilértékelések megtekintése (mennyien tekintették hasznosnak a bemutatóit, melyik a legelismertebb bemutatója)
 
 #### Filmelemzések
-- Értékelés megadása: 
-  * Összpontszám
-  * Külön pontokra szedve 
-    * Történet
-    * Zene/Hang
-    * Színészi játék
-    * Vizualitás
-    * Szinkron
-- Ismertető szöveg írása
+ÚJ ÉRTÉKELÉS: 
+ - Értékelés megadása: 
+   * Összpontszám (Átlagolja a többiből)
+   * Külön pontokra szedve 
+     * Történet
+     * Zene/Hang
+     * Színészi játék
+     * Vizualitás
+     * Szinkron
+ - Ismertető szöveg írása
+   * Az ismertető a későbbiekben is változtatható
+   * 
+
+#### Hozzászólások
 - Hozzászólások írása más felhasználók elemzéseihez
+- Más felhasználók hozzászólásainak +1-ezése (Egyetértek) vagy -1-ezése (Nem ért egyet)
 
 ### Vendégeknek
 - Regisztráció, bejelentkezés
@@ -40,3 +46,7 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 - Jelszavak tárolása, funkciókhoz való hozzáférés, biztonságos működés.
 
 ## SZAKTERÜLETI FOGALOMJEGYZÉK
+
+Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmről. Pontokra szedve vagy folyamatosan egyben, ez a felhasználótól függ.
+
+Értékelés: Egy egész szám 1-től 5-ig, amivel a film adott jellemzőjét(a fentebb felsoroltakra bontva) osztályozza a felhasználó
