@@ -5,10 +5,11 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 
 ### Adminisztrátoroknak
 #### Moderálás
+- Új filmek felvétele az értékelhető filmek közé
 - Filmelemzések szövegének módosítása
 - Filmelemzések törlése
-- Hozzászólások törlése
-- Hozzászólások módosítása
+- (Mindenhol) Hozzászólások törlése
+- (Mindenhol) Hozzászólások módosítása
 - Főoldali bejegyzések kiírása
 
 ### Felhasználóknak
@@ -17,22 +18,24 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 - Profilértékelések megtekintése (mennyien tekintették hasznosnak a bemutatóit, melyik a legelismertebb bemutatója)
 
 #### Filmelemzések
-ÚJ ÉRTÉKELÉS: 
- - Értékelés megadása: 
-   * Összpontszám (Átlagolja a többiből)
-   * Külön pontokra szedve 
-     * Történet
-     * Zene/Hang
-     * Színészi játék
-     * Vizualitás
-     * Szinkron
- - Ismertető szöveg írása
-   * Az ismertető a későbbiekben is változtatható
-   * Beilleszthetőek képek illusztrációképpen
-
+* Új elemzése hozzáadása:
+  - Film kiválasztása
+  - Értékelés megadása: 
+    * Összpontszám (Átlagolja a többiből)
+    * Külön pontokra szedve 
+      * Történet
+      * Zene/Hang
+      * Színészi játék
+      * Vizualitás
+      * Szinkron
+  - Ismertető szöveg írása
+    * Beilleszthetőek képek illusztrációképpen
+* Előző elemzések módosítása
+* Előző elemzések törlése
 #### Hozzászólások
 - Hozzászólások írása más felhasználók elemzéseihez
-- Más felhasználók hozzászólásainak +1-ezése (Egyetértek) vagy -1-ezése (Nem ért egyet)
+- Más felhasználók hozzászólásainak '+1'-ezése (Egyetért) vagy '-1'-ezése (Nem ért egyet)
+- Saját filmismertetőkhöz írt hozzászólások moderelása
 
 ### Vendégeknek
 - Regisztráció, bejelentkezés
