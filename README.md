@@ -28,7 +28,7 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
      * Szinkron
  - Ismertető szöveg írása
    * Az ismertető a későbbiekben is változtatható
-   * 
+   * Beilleszthetőek képek illusztrációképpen
 
 #### Hozzászólások
 - Hozzászólások írása más felhasználók elemzéseihez
@@ -44,6 +44,7 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 - Felhasználóbarát, ergonomikus elrendezés és kinézet.
 - Gyors működés.
 - Jelszavak tárolása, funkciókhoz való hozzáférés, biztonságos működés.
+- Filmértékelések tárolásához elegendő háttértár
 
 ## SZAKTERÜLETI FOGALOMJEGYZÉK
 
