@@ -32,6 +32,7 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
     * Beilleszthetőek képek illusztrációképpen
 * Előző elemzések módosítása
 * Előző elemzések törlése
+
 #### Hozzászólások
 - Hozzászólások írása más felhasználók elemzéseihez
 - Más felhasználók hozzászólásainak '+1'-ezése (Egyetért) vagy '-1'-ezése (Nem ért egyet)
