@@ -2,7 +2,9 @@
 Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatókat, értékeléseket írni, ajánlási és pontozási rendszerrel.
 
 ## Funkcionális elvárások
+### Felhasználóknak
 
+### Vendégeknek
 
 ## Nem funkcionális követelmények
 - Felhasználóbarát, ergonomikus elrendezés és kinézet.
