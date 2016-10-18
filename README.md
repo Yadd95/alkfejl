@@ -7,6 +7,8 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 - Profiladatok szerkesztése (email, jelszó, bemutatkozás)
 - Profilértékelések megtekintése (mennyien tekintették hasznosnak a bemutatóit, melyik a legelismertebb bemutatója)
 #### d
+
+
 ### Vendégeknek
 - Regisztráció, bejelentkezés
 - Filmismertetők hasznosnak jelölése
