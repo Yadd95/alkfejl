@@ -4,13 +4,15 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 ## Funkcionális elvárások
 
 ### Adminisztrátoroknak
-#### Moderálás
+#### Adminisztráció
 - Új filmek felvétele az értékelhető filmek közé
+- Főoldali bejegyzések kiírása
+
+#### Moderálás
 - Filmelemzések szövegének módosítása
 - Filmelemzések törlése
 - (Mindenhol) Hozzászólások törlése
 - (Mindenhol) Hozzászólások módosítása
-- Főoldali bejegyzések kiírása
 
 ### Felhasználóknak
 #### Profilkezelés
