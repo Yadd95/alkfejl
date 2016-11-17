@@ -57,3 +57,4 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmről. Pontokra szedve vagy folyamatosan egyben, ez a felhasználótól függ.
 
 Értékelés: Egy egész szám 1-től 5-ig, amivel a film adott jellemzőjét(a fentebb felsoroltakra bontva) osztályozza a felhasználó
+
