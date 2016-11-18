@@ -1,5 +1,7 @@
 'use strict'
 const Database = use('Database')
+const Validator = use('Validator')
+const User = use('App/Model/User')
 
 class UserController {
     * register (req, res){
@@ -14,7 +16,10 @@ class UserController {
             res.json(validation.messages())
             return
         }
-        res.send(user)
+        
+        const savedUser = yield User.create(userData);
+
+        res.send(savedUser)
     }
 
 }
