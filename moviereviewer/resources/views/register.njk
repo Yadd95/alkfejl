@@ -1,21 +1,29 @@
 {% extends 'master' %}
+{% set active_page = "register" %}
 
 {% block content %}
 <div class="formu">
+
+ {% for error in old('errors') %}
+ <div class="alert alert-dismissible alert-danger">
+{{ error.message }}
+</div>
+   {% endfor %}
+
 {{ form.open({action:'UserController.store'}) }}
  <fieldset>
     <legend>Registration</legend>
   <div class="form-pad">
     {{ form.label('Username','Username', {class: 'col-lg-2 control-label'}) }}
     <div class="col-lg-10">
-     {{ form.text('username', '', {class: "form-control" }) }}
+     {{ form.text('username', old('username'), {class: "form-control" }) }}
     </div>
   </div>
 
   <div class="form-pad">
     {{ form.label('Email','E-mail', {class: 'col-lg-2 control-label'}) }}
     <div class="col-lg-10">
-    {{ form.text('email', '', {class: "form-control" }) }}
+    {{ form.text('email', old('email'), {class: "form-control" }) }}
     </div>
   </div>
 

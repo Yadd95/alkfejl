@@ -13,13 +13,14 @@ class UserController {
         const validation = yield Validator.validate(userData, User.rules)
 
         if (validation.fails()) {
-            res.json(validation.messages())
+            yield req.withAll().andWith({errors: validation.messages()}).flash()
+            res.redirect('back')
             return
         }
         
         const savedUser = yield User.create(userData);
-
-        res.send(savedUser)
+        yield req.withAll().andWith({regmessage: true}).flash()
+        res.redirect('/')
     }
 
 }

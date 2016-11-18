@@ -1,4 +1,5 @@
 <!doctype html>
+    {% set active_page = active_page|default('main') -%}
 <html>
 <head>
   <meta charset="utf-8">
@@ -25,17 +26,21 @@
       {% endif %}
 
     </div>
-
+    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-      <ul class="nav navbar-nav">
-       
+      <ul id="navigation" class="nav navbar-nav">
         {% if currentUser %}
-        <li><a href="/profile">My Profile</a></li>
-        <li><a href="/reviews">My Reviews</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li {% if active_page == "profile" %} class="active"{% endif
+  %}><a href="/profile">My Profile</a></li>
+        <li {% if id == active_page %} class="active"{% endif
+  %}><a href="/reviews">My Reviews</a></li>
+        <li {% if  active_page == "logut" %} class="active"{% endif
+  %}><a href="/logout">Logout</a></li>
         {% else %}
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
+        <li {% if  active_page == "login" %} class="active"{% endif
+  %}><a href="/login">Login</a></li>
+        <li {% if active_page == "register" %} class="active"{% endif
+  %}><a href="/register">Register</a></li>
         {% endif %}
        
       </ul>
@@ -46,8 +51,10 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Main <span class="sr-only">(current)</span></a></li>
-        <li><a href="/movies">Film List</a></li>
+        <li {% if active_page == "main" %} class="active"{% endif
+  %}><a href="/">Main <span class="sr-only">(current)</span></a></li>
+        <li {% if  active_page == "movies" %} class="active"{% endif
+  %}><a href="/movies">Film List</a></li>
       </ul>
     </div>
   </div>
