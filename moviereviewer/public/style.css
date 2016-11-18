@@ -6,7 +6,7 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   font-weight: lighter;
-  background: #ffffff;
+  background-color: lightsteelblue;
 }
 
 * {
@@ -99,4 +99,19 @@ body {
 
 .__footer li a:hover {
   opacity: 1;
+}
+
+
+.form-pad{
+  padding-top: 10%;
+}
+
+.formu{
+  padding: 40px 40px;
+  display: block;
+  font-weight: bold;
+  color: dodgerblue;
+  width: 50%;
+  font-size: 120%;
+
 }

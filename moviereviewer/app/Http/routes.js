@@ -17,4 +17,14 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/', 'ReviewController.index')
+
+Route.get('/login', 'UserController.login')
+//Route.post('/login', 'UserController.postLogin')
+Route.get('/logout', 'UserController.logout')
+
+Route.get('/register', 'UserController.register')
+Route.get('/registration', 'UserController.store')
+//Route.post('/registration', 'UserController.postRegistration')
+
+Route.get('/profile', 'UserController.profile').middleware('auth')
