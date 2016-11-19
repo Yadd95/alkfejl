@@ -29,3 +29,4 @@ Route.get('/registration', 'UserController.store')
 
 Route.get('/reviews', 'UserController.reviews').middleware('auth')
 Route.get('/profile', 'UserController.profile').middleware('auth')
+Route.get('/movies', 'ReviewController.movies')

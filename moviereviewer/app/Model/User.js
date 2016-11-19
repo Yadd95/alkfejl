@@ -25,6 +25,9 @@ class User extends Lucid {
   reviews () {
     return this.hasMany('App/Model/Review')
   }
+  access () {
+    return this.hasMany('App/Model/Admin')
+  }
 
 
 }
