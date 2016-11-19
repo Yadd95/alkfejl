@@ -3,7 +3,7 @@ const Database = use('Database')
 const Movie = use('App/Model/Movie')
 const Category = use('App/Model/Category')
 const Review = use('App/Model/Review')
-//const Validator = use('Validator')
+const Validator = use('Validator')
 
 class ReviewController {
     

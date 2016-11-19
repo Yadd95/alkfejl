@@ -110,8 +110,25 @@ body {
   padding: 40px 40px;
   display: block;
   font-weight: bold;
-  color: dodgerblue;
+  color: royalblue;
   width: 50%;
   font-size: 120%;
 
+}
+
+.content{
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: bold;
+  color: royalblue;
+  width: 50%;
+  font-size: 120%;
+}
+.centered{
+  text-align:   center;
+}
+
+.maintext{
+  background: navajowhite;
+  padding: 20px;
 }

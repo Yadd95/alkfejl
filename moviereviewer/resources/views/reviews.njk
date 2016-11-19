@@ -1,0 +1,33 @@
+
+
+{% extends 'master' %}
+
+
+{% block content %}
+<div class="panel-body">
+<h1 class="centered">My Reviews</h1>
+<a href="#" class="btn btn-success btn-lg btn-block">New review</a>
+<p></p>
+{% for review in reviews %}
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <button type="button" class="close">Check out</button>
+    <h3 class="panel-title"> Title: {{ review.title }}</h3>
+    <h5 class="panel-title"> Created: {{ review.created_at }}</h5> 
+    <h5 class="panel-title">Last updated: {{ review.updated_at }} </h5>
+  </div>
+  <div class="panel-body">
+    <p>Movie title: {{ movies[review.movie_id-1].title }}</p>
+    <p>Director: {{ movies[review.movie_id-1].director }}</p>
+    <p>My rating: {{ review.urating }}</p>
+    <p>Average Rating: {{ movies[review.movie_id-1].rating}} </p>
+    <p><a href="#" class="btn btn-warning" >Modify</a> <a href="#" class="btn btn-danger" >Delete</a></p>
+  </div>
+</div>
+
+{% else %}
+<h2> No reviews found </h2>
+{% endfor %}   
+
+</div>
+{% endblock %}
