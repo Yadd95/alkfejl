@@ -60,13 +60,69 @@ class MovieController {
     const reviews = yield movie.reviews().fetch();
     const users = yield User.all();
     const scores = yield movie.scores().fetch();
+    const uid = req.currentUser.id;
+        if (uid){
+        const user = yield User.find(uid);
+           const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+        
+  
+          if(adminaccess)
+          {
+            access = true;
+
+          }else{
+          
+             access = false;
+        }
+        }else {
+          const user = null;
+          var access= false;
+        }
+    
     yield res.sendView('showreviews', {
         reviews: reviews.toJSON(),
         movie: movie.toJSON(),
         users: users.toJSON(),
-        scores: scores.toJSON()
+        scores: scores.toJSON(),
+        adminaccess: access
 
         });
+  }
+  * showMovie(req,res){
+    const id = req.param('id');
+    const movie = yield Movie.find(id);
+    const uid = req.currentUser.id;
+    if (uid){
+    const user = yield User.find(uid);
+            const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+         
+          if(adminaccess)
+          {
+            access = true;
+          
+          }else{
+          access = false;
+        }
+    }else {
+      var access= false;
+    }
+      yield res.sendView('showmovie',{
+      movie: movie.toJSON(),
+      adminaccess: access
+    });
+
   }
 
 }

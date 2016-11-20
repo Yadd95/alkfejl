@@ -28,7 +28,9 @@
     <p>Overall rating: {{ review.urating }}%</p>
     {% endif %}
     {% endfor %}
+    {% if review.user_id == currentUser.id or adminaccess %}
     <p><a href="#" class="btn btn-warning" >Modify</a> <a href="/delete_r/{{review.id}}" class="btn btn-danger" >Delete</a></p>
+    {% endif %}
   </div>
 </div>
 

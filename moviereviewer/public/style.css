@@ -147,3 +147,26 @@ body {
   background: navajowhite;
   padding: 20px;
 }
+.textpart{
+  border: dashed 1px dodgerblue;
+  margin: 0 auto;
+  width: 90%;
+  padding: 10px;
+  background: khaki;
+}
+.scores{
+  text-align:   center;
+  background-color: sandybrown;
+  width: 40%;
+  margin: 0 auto;
+  border: dashed 1px black;
+  padding: 10px;
+}
+.info{
+    text-align:   center;
+  background-color: skyblue;
+  width: 40%;
+  margin: 0 auto;
+  border: dashed 1px black;
+  padding: 10px;
+}

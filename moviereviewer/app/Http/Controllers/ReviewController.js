@@ -77,14 +77,21 @@ class ReviewController {
         const id = req.currentUser.id;
         if (id){
         const user = yield User.find(id);
-        const adminaccess = yield user.access().fetch();
+        const admin = yield user.access().fetch();
         var access = false;
-         if(adminaccess.isEmpty())
-         {
-          access = false;
-         }else{
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+
+  
+          if(adminaccess)
+          {
           access = true;
-         }
+          }else{
+          access = false;
+        }
         }else {
           const user = null;
           var access= false;
@@ -102,8 +109,27 @@ class ReviewController {
     * delete (req, res) {
     const id = req.param('id');
     const review = yield Review.find(id);
+    const user = yield User.find(req.currentUser.id);
+        const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+        
+  
+          if(adminaccess)
+          {
+            access = true;
+      
+          }else{
+              access = false;
+        }
+        
 
-    if (req.currentUser.id !== review.user_id) {
+
+    if (req.currentUser.id !== review.user_id && !access) {
       res.unauthorized('Access denied.')
       return
     }
@@ -115,19 +141,37 @@ class ReviewController {
     yield review.delete()
     res.redirect('/reviews')
     }
+
    * show(req,res){
     const id = req.param('id');
     const review = yield Review.find(id);
     const user = yield review.user().fetch();
     const scores = yield review.scores().fetch();
     const movie = yield review.movie().fetch();
-    res.sendView('showreview',{
+    const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+        
+  
+          if(adminaccess)
+          {
+          access = true;
+          }else{
+          access = false;
+        }
+    yield res.sendView('showreview',{
       review: review.toJSON(),
       user: user.toJSON(),
       movie: movie.toJSON(),
-      scores: score.toJSON()
-    })
-  }
+      scores: scores.toJSON(),
+      adminaccess: access
+    });
+
+ }
 }
 
 module.exports = ReviewController

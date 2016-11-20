@@ -25,7 +25,7 @@ class Review extends Lucid {
     return this.belongsTo('App/Model/Movie')
   }
     scores () {
-    return this.hasMany('App/Model/Score')
+    return this.hasOne('App/Model/Score')
   }
 }
 

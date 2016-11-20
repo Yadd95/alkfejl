@@ -1,0 +1,49 @@
+
+
+{% extends 'master' %}
+{% set active_page = "showreview" %}
+
+{% block content %}
+<div class="panel-body">
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h1 class="panel-title"><strong> Title: {{ review.title }} </strong></h1>
+    <p><i>Created by: {{ user.username }}</i></p>
+  </div>
+  <div class="panel-body">
+ <h2 class="centered"> Movie Information: </h2>
+  <div class="info">
+    <h4> Title: {{ movie.title }} </h4>
+    <h4> Director: {{ movie.director }} </h4>
+    <h4> Origin: [{{movie.origin}}]</h4>
+    <h4> Average rating: {{movie.rating}}%</h4>
+  </div>
+  <hr>
+  <h2 class="centered"> Review:</h2>
+    <div class="textpart">
+    {{ review.content }}
+    </div>
+    <hr>
+    <h3 class="centered"><b>Scores: </b></h3>
+    <div class="scores">
+    <h4><b>Sound:</b> {{ scores.rating_1 }}</h4>
+    <h4><b>Visuals:</b> {{ scores.rating_2 }}</h4>
+    <h4><b>Setting:</b> {{ scores.rating_3 }}</h4>
+    <h4><b>Characters:</b> {{ scores.rating_4 }}</h4>
+    <h4><b>Plot:</b> {{ scores.rating_5 }}</h4>
+    <h4><b>Acting:</b> {{ scores.rating_6 }}</h4>
+    <h3><strong>Overall rating: {{ review.urating }}% </strong></h3>
+    </div>
+    <hr>
+    {% if review.user_id == currentUser.id or adminaccess %}
+    <p><a href="#" class="btn btn-warning" >Modify</a> <a href="/delete_r/{{review.id}}" class="btn btn-danger" >Delete</a></p>
+    {% endif %}
+    <hr>
+    <h5 class="panel-title"> Created: {{ review.created_at }}</h5> 
+    <h5 class="panel-title"> Last updated: {{ review.updated_at }} </h5>
+  </div>
+</div>
+ 
+
+</div>
+{% endblock %}
