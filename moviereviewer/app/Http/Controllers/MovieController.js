@@ -10,7 +10,7 @@ const Score = use('App/Model/Score')
 class MovieController {
 
     * store (req, res) {
-      const movieData = req.only('title','director','origin','category_id','plot','release','writer','stars') 
+      const movieData = req.only('title','director','origin','category_id','plot','release','writer','stars'/*,'avatar'*/) 
       const validation = yield Validator.validate(movieData, Movie.rules)
       if (validation.fails()) {
             yield req.withOnly('title','director','origin','category_id','plot','release','writer','stars').andWith({errors: validation.messages()}).flash()

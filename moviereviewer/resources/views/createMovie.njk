@@ -42,7 +42,7 @@
       {{ form.text('stars', null, { class: 'form-control' }) }}
     </fieldset>
 
-
+       </fieldset>
     <div class="smallfield">
     <fieldset class="form-group">
       <label for="category_id">Category</label>
@@ -62,7 +62,7 @@
       {{ form.label('Plot') }}
        <textarea rows="25" name="plot" class="form-control" id="plot"></textarea>
     </fieldset>
-
+      {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
 
   {{ form.close() }}
