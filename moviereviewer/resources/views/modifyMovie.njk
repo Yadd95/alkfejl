@@ -1,0 +1,57 @@
+{% extends 'master' %}
+{% set active_page = "modify_movie" %}
+{% block content %}
+{% for error in old('errors') %}
+<div class="alert alert-danger">
+
+    <li> {{ error.message }} </li>
+
+</div>
+{% endfor %}
+<div class="content">
+  {{ form.open({ action: 'MovieController.edit', params: {id: movie.id} }) }}
+
+    {{ csrfField }}
+    <div class="smallerarea">
+    <fieldset class="form-group">
+      {{ form.label('Title') }}
+      {{ form.text('title', movie.title, { class: 'form-control' }) }}
+    </fieldset>
+
+    <fieldset class="form-group">
+      {{ form.label('Director') }}
+      {{ form.text('director', movie.director, { class: 'form-control' }) }}
+    </fieldset>
+    <div class="twocharcode">
+    <fieldset class="form-group">
+      {{ form.label('Origin') }}
+      <input type="text" name="origin" class="form-control" id="origin" maxlength="2" value={{movie.origin}} />
+    </fieldset>
+    </div>
+    <div class="smallfield">
+    <fieldset class="form-group">
+      <label for="category_id">Category</label>
+      <select class="form-control" id="category_id" name="category_id">
+        {% for category in categories %}
+        <option value="{{ category.id }}"
+          {% if category.id == old('category_id') or category.id == movie.category_id %}
+          selected
+          {% endif %}
+        >{{ category.name }}</option>
+        {% endfor %}
+      </select>
+    </fieldset>
+    </div>
+    <div>
+    <fieldset class="form-group">
+      {{ form.label('Plot') }}
+       <textarea rows="25" name="plot" class="form-control" id="plot" value=>{{movie.plot}}</textarea>
+    </fieldset>
+
+    {{ form.submit('Save', 'publish', { class: 'btn btn-primary btn-block' }) }}
+       <div>
+      <a href="/movies" class="btn btn-default btn-block btn-lg"> Mégse </a>
+   </div>
+  {{ form.close() }}
+  </div>
+{% endblock %}

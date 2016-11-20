@@ -124,6 +124,35 @@ class MovieController {
     });
 
   }
+  * modify(req,res){
+    const categories = yield Category.all()
+    const id = req.param('id');
+    const movie = yield Movie.find(id);
+    yield res.sendView('modifyMovie', {
+      categories: categories.toJSON(),
+      movie: movie.toJSON()
+    });
+
+  }
+  * edit (req, res){
+    const movieData = req.only('title', 'director','origin', 'category_id','plot')
+    const validation = yield Validator.validate(movieData, Movie.rules);
+    const id = req.param('id');
+    if (validation.fails()) {
+            yield req.withOnly('title','director','origin','category_id','plot').andWith({errors: validation.messages()}).flash()
+            res.redirect('back')
+            return
+    }
+    const oldmovie = yield Movie.find(id);
+    oldmovie.title = movieData.title;
+    oldmovie.director = movieData.director;
+    oldmovie.origin = movieData.origin;
+    oldmovie.category_id = movieData.category_id;
+    oldmovie.plot = movieData.plot;
+
+    yield oldmovie.save();
+    res.redirect('/movie/' + id  + '/show')
+  }
 
 }
 

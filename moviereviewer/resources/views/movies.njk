@@ -28,7 +28,7 @@
     <p>Number of reviews: {{ movie.count }}</p>
     <p>Average Overall Rating: {{ movie.rating}}% </p>
     {% if adminaccess %}
-    <p><a href="#" class="btn btn-warning" >Modify</a> <a href="/delete_m/{{movie.id}}" class="btn btn-danger" >Delete</a></p>
+    <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="/delete_m/{{movie.id}}" class="btn btn-danger" >Delete</a></p>
     {% endif %}
   </div>
 </div>
