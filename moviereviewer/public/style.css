@@ -121,13 +121,28 @@ body {
   padding: 10px;
   font-weight: bold;
   color: royalblue;
-  width: 50%;
+  width: 60%;
   font-size: 120%;
+}
+.smallerarea{
+  width: 90%;
+  margin: 0 auto;
+}
+.smallfield{
+  width: 20%;
+}
+.twocharcode{
+ width: 10%;
 }
 .centered{
   text-align:   center;
 }
-
+.ratings{
+    margin: 0 auto;
+  background: springgreen;
+  padding-left: 10px;
+  width: 55%;
+}
 .maintext{
   background: navajowhite;
   padding: 20px;

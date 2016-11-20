@@ -8,10 +8,11 @@
 
 </div>
 {% endfor %}
+<div class="content">
   {{ form.open({action: 'MovieController.store'}) }}
 
     {{ csrfField }}
-
+    <div class="smallerarea">
     <fieldset class="form-group">
       {{ form.label('Title') }}
       {{ form.text('title', null, { class: 'form-control' }) }}
@@ -21,13 +22,15 @@
       {{ form.label('Director') }}
       {{ form.text('director', null, { class: 'form-control' }) }}
     </fieldset>
+    <div class="twocharcode">
     <fieldset class="form-group">
       {{ form.label('Origin') }}
-      {{ form.text('origin', null, { class: 'form-control' }) }}
+      <input type="text" name="origin" class="form-control" id="origin" maxlength="2" />
     </fieldset>
-
+    </div>
+    <div class="smallfield">
     <fieldset class="form-group">
-      <label for="category_id" class="col-lg-2 control-label">Category</label>
+      <label for="category_id">Category</label>
       <select class="form-control" id="category_id" name="category_id">
         {% for category in categories %}
         <option value="{{ category.id }}"
@@ -38,13 +41,15 @@
         {% endfor %}
       </select>
     </fieldset>
-
+    </div>
+    <div>
     <fieldset class="form-group">
       {{ form.label('Plot') }}
-      {{ form.textarea('plot', null, { class: 'form-control' }) }}
+       <textarea rows="25" name="plot" class="form-control" id="plot"></textarea>
     </fieldset>
 
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
 
   {{ form.close() }}
+  </div>
 {% endblock %}

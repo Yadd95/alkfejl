@@ -2,18 +2,15 @@
 
 const Lucid = use('Lucid')
 
-class Review extends Lucid {
+class Score extends Lucid {
     static get rules () {
         return  {
-           title: 'required', //kotelezo
-           movie_id: 'required',
-           content: 'required'/*,
            rating_1: 'required',
            rating_2: 'required',
            rating_3: 'required',
            rating_4: 'required', 
            rating_5: 'required',
-           rating_6: 'required'*/
+           rating_6: 'required'
     }     
    }
 
@@ -24,9 +21,10 @@ class Review extends Lucid {
     movie () {
     return this.belongsTo('App/Model/Movie')
   }
-    scores () {
-    return this.hasMany('App/Model/Score')
+
+    review () {
+    return this.belongsTo('App/Model/Review')
   }
 }
 
-module.exports = Review
+module.exports = Score

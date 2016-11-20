@@ -8,10 +8,19 @@
 
 </div>
 {% endfor %}
+{% for scoreError in old('scoreError') %}
+<div class="alert alert-danger">
+
+    <li> {{ scoreError.message }} </li>
+
+</div>
+
+{% endfor %}
+<div class="content">
   {{ form.open({action: 'ReviewController.store'}) }}
 
     {{ csrfField }}
-
+ <div class="smallerarea">
     <fieldset class="form-group">
       {{ form.label('Title') }}
       {{ form.text('title', null, { class: 'form-control' }) }}
@@ -29,13 +38,25 @@
         {% endfor %}
       </select>
     </fieldset>
-
+</div>
     <fieldset class="form-group">
       {{ form.label('Text') }}
-      {{ form.textarea('content', null, { class: 'form-control' }) }}
+     <textarea rows="25" name="content" class="form-control" id="content"></textarea>
     </fieldset>
-
+    <div class="ratings">
+  <fieldset class="form-group">
+  <div class="centered">
+   {{ form.label('Rating (1-5):') }}
+   </div>
+  <p>  {{ form.label('Sound:') }} <input type="number" name="rating_1" min="1" max="10"> {{form.label('Visuals:') }} <input type="number" name="rating_2" min="1" max="10"> {{form.label('Setting:') }} <input type="number" name="rating_3" min="1" max="10"></p>
+  <p> {{form.label('Characters:') }} <input type="number" name="rating_4" min="1" max="10">
+ {{form.label('Plot:') }} <input type="number" name="rating_5" min="1" max="10">
+  {{form.label('Acting:') }} <input type="number" name="rating_6" min="1" max="10"></p>
+    </fieldset>
+    </div>
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
 
   {{ form.close() }}
+
+  </div>
 {% endblock %}

@@ -37,7 +37,19 @@ class MovieController {
   * delete (req, res) {
     const id = req.param('id');
     const movie = yield Movie.find(id);
-
+    const reviews = yield movie.reviews().fetch();
+    var count=0; 
+    var idx=[];
+    reviews.forEach( function (review)
+    {    
+     idx[count] = +review.id;
+     count+=1;
+    });
+    var curr;
+    for (var i=0; i<count; i++){
+      curr = yield Review.find(idx[i]);
+      yield curr.delete();
+    }
     yield movie.delete()
     res.redirect('/movies')
   }

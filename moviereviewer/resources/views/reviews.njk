@@ -17,10 +17,14 @@
     <h5 class="panel-title">Last updated: {{ review.updated_at }} </h5>
   </div>
   <div class="panel-body">
-    <p>Movie title: {{ movies[review.movie_id-1].title }}</p>
-    <p>Director: {{ movies[review.movie_id-1].director }}</p>
-    <p>My rating: {{ review.urating }}</p>
-    <p>Average Rating: {{ movies[review.movie_id-1].rating}} </p>
+    {% for movie in movies %}
+    {% if movie.id == review.movie_id %}
+    <p>Movie title: {{ movie.title }}</p>
+    <p>Director: {{ movie.director }}</p>
+    <p>My overall rating: {{ review.urating }}%</p>
+    <p>Average Rating: {{ movie.rating}}% </p>
+    {% endif %}
+    {% endfor %}
     <p><a href="#" class="btn btn-warning" >Modify</a> <a href="/delete_r/{{review.id}}" class="btn btn-danger" >Delete</a></p>
   </div>
 </div>

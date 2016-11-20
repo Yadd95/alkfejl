@@ -28,7 +28,9 @@ class User extends Lucid {
   access () {
     return this.hasMany('App/Model/Admin')
   }
-
+  scores () {
+    return this.hasMany('App/Model/Score')
+  }
 
 }
 
