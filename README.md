@@ -135,8 +135,8 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 
 ### Felhasználóifelület-modell
 
-** Oldalvázlatok **
++ **Oldalvázlatok**
 
 ### Osztálymodell
 
-** Adatmodell
++ **Adatmodell**
