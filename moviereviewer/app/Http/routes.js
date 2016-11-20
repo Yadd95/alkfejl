@@ -24,8 +24,8 @@ Route.get('/login', 'UserController.login')
 Route.get('/logout', 'UserController.logout')
 
 Route.get('/register', 'UserController.register')
-Route.post('/registration', 'UserController.store')
-
+Route.get('/registration', 'UserController.store')
+//Route.post('/registration', 'UserController.postRegistration')
 
 Route.get('/reviews', 'UserController.reviews').middleware('auth')
 Route.get('/profile', 'UserController.profile').middleware('auth')

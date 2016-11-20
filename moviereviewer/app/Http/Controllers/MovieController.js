@@ -60,8 +60,9 @@ class MovieController {
     const reviews = yield movie.reviews().fetch();
     const users = yield User.all();
     const scores = yield movie.scores().fetch();
-    const uid = req.currentUser.id;
-        if (uid){
+
+        if (req.currentUser){
+              const uid = req.currentUser.id;
         const user = yield User.find(uid);
            const admin = yield user.access().fetch();
         var access = false;
@@ -97,8 +98,9 @@ class MovieController {
   * showMovie(req,res){
     const id = req.param('id');
     const movie = yield Movie.find(id);
+
+    if (req.currentUser){
     const uid = req.currentUser.id;
-    if (uid){
     const user = yield User.find(uid);
             const admin = yield user.access().fetch();
         var access = false;
@@ -204,8 +206,9 @@ class MovieController {
     * movies(req,res){
         const categories = yield Category.all()
         const movies = yield Movie.all()
-        const id = req.currentUser.id;
-        if (id){
+
+        if (req.currentUser){
+          const id = req.currentUser.id;
         const user = yield User.find(id);
         const admin = yield user.access().fetch();
         var access = false;
