@@ -4,12 +4,35 @@
 {% set active_page = "movies" %}
 
 {% block content %}
+
+
 <div class="panel-body">
 <h1 class="centered">Movies</h1>
 {% if adminaccess %}
 <a href="/new_movie" class="btn btn-success btn-lg btn-block">New movie</a>
 {% endif %}
-
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form  method="POST" action="/filter" enctype="application/x-www-form-urlencoded" class="navbar-form navbar-left" >
+         {{ csrfField }}
+        <div class="form-group">
+              <fieldset class="form-group">
+      <label for="category_id">Filter by category:</label>
+      <select class="form-control" id="category_id" name="category_id">
+        <option value="0"> All </option>
+        {% for category in categories %}
+        <option value="{{ category.id }}"
+          {% if category.id == cid %}
+          selected
+          {% endif %}
+        >{{ category.name }}</option>
+        {% endfor %}
+      </select>
+    </fieldset>
+        </div>
+        <button type="submit" class="btn btn-default">Filter</button>
+      </form>
+      </div>
+    
 <hr>
 {% for movie in movies %}
 <div class="panel panel-primary">

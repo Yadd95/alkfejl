@@ -71,41 +71,6 @@ class ReviewController {
     yield res.sendView('main');
     
   }
-    * movies(req,res){
-        const categories = yield Category.all()
-        const movies = yield Movie.all()
-        const id = req.currentUser.id;
-        if (id){
-        const user = yield User.find(id);
-        const admin = yield user.access().fetch();
-        var access = false;
-        var adminaccess;
-        admin.forEach( function (a)
-        {
-          adminaccess=a;
-        });
-
-  
-          if(adminaccess)
-          {
-          access = true;
-          }else{
-          access = false;
-        }
-        }else {
-          const user = null;
-          var access= false;
-        }
-
-       
-
-        yield res.sendView('movies', {
-        categories: categories.toJSON(),
-        movies: movies.toJSON(),
-        adminaccess: access
-        });
-
-    }
     * delete (req, res) {
     const id = req.param('id');
     const review = yield Review.find(id);

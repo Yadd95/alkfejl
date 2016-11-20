@@ -29,7 +29,7 @@ Route.get('/registration', 'UserController.store')
 
 Route.get('/reviews', 'UserController.reviews').middleware('auth')
 Route.get('/profile', 'UserController.profile').middleware('auth')
-Route.get('/movies', 'ReviewController.movies')
+Route.get('/movies', 'MovieController.movies')
 Route.get('/new_review', 'ReviewController.create').middleware('auth')
 Route.post('/create_review', 'ReviewController.store').middleware('auth')
 Route.get('/delete_r/:id', 'ReviewController.delete').middleware('auth')
@@ -41,7 +41,7 @@ Route.post('/create_movie', 'MovieController.store').middleware('auth')
 Route.get('/delete_m/:id', 'MovieController.delete').middleware('auth')
 Route.get('/modify_m/:id', 'MovieController.modify').middleware('auth')
 Route.post('/edit_m/:id', 'MovieController.edit').middleware('auth')
-
+Route.post('/filter', 'MovieController.filter')
 
 Route.get('/movie/:id/reviews', 'MovieController.showReviews')
 Route.get('/new_review/:id', 'ReviewController.create')

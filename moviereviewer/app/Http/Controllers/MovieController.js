@@ -153,7 +153,87 @@ class MovieController {
     yield oldmovie.save();
     res.redirect('/movie/' + id  + '/show')
   }
+  * filter(req,res) {
+        const cid = req.only('category_id');
+        const category = yield Category.find(cid.category_id);
+        var movies;        
+        if(cid.category_id==0){
+         movies = yield Movie.all()
+        }else{
+         movies = yield category.movies().fetch();
+        }
+        const categories = yield Category.all();
+        const id = req.currentUser.id;
+        if (id){
+        const user = yield User.find(id);
+        const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
 
+  
+          if(adminaccess)
+          {
+          access = true;
+          }else{
+          access = false;
+        }
+        }else {
+          const user = null;
+          var access= false;
+        }
+
+       
+
+        yield res.sendView('movies', {
+        categories: categories.toJSON(),
+        movies: movies.toJSON(),
+        cid: cid.category_id,
+        adminaccess: access
+        });
+
+    }
+  
+
+    * movies(req,res){
+        const categories = yield Category.all()
+        const movies = yield Movie.all()
+        const id = req.currentUser.id;
+        if (id){
+        const user = yield User.find(id);
+        const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+
+  
+          if(adminaccess)
+          {
+          access = true;
+          }else{
+          access = false;
+        }
+        }else {
+          const user = null;
+          var access= false;
+        }
+
+       
+
+        yield res.sendView('movies', {
+        categories: categories.toJSON(),
+        movies: movies.toJSON(),
+        cid: 0,
+        adminaccess: access
+        });
+
+    }
 }
 
 module.exports = MovieController
