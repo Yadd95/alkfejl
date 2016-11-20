@@ -133,4 +133,10 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 + **GET/review/:id**: Egy bemutató megtekintése
 + **GET/movie/:id/show**: Egy film adatainak megtekintése
 
+### Felhasználóifelület-modell
 
+** Oldalvázlatok **
+
+### Osztálymodell
+
+** Adatmodell
