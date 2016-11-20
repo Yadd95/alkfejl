@@ -14,7 +14,7 @@
 {% for movie in movies %}
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <button type="button" class="close">Reviews</button>
+    <button type="button" onclick="window.location.href='../movie/{{movie.id}}/reviews'" class="close">Reviews</button>
     <h3 class="panel-title"> Title: {{ movie.title }}</h3>
   </div>
   <div class="panel-body">

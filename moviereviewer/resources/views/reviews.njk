@@ -11,7 +11,7 @@
 {% for review in reviews %}
 <div class="panel panel-info">
   <div class="panel-heading">
-    <button type="button" class="close">Check out</button>
+    <button type="button" onclick="window.location.href='../review/{{review.id}}'" class="close">Check out</button>
     <h3 class="panel-title"> Title: {{ review.title }}</h3>
     <h5 class="panel-title"> Created: {{ review.created_at }}</h5> 
     <h5 class="panel-title">Last updated: {{ review.updated_at }} </h5>

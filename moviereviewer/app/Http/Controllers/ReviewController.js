@@ -59,6 +59,14 @@ class ReviewController {
     });
   }
 
+    * createWithId (req, res) {
+    const id = req.param('id');
+    const movies = yield Movie.all()
+    yield res.redirect('createReview', {
+      movies: movies.toJSON(),
+      id: id
+    });
+  }
     * index (req, res) {
     yield res.sendView('main');
     
@@ -107,6 +115,19 @@ class ReviewController {
     yield review.delete()
     res.redirect('/reviews')
     }
+   * show(req,res){
+    const id = req.param('id');
+    const review = yield Review.find(id);
+    const user = yield review.user().fetch();
+    const scores = yield review.scores().fetch();
+    const movie = yield review.movie().fetch();
+    res.sendView('showreview',{
+      review: review.toJSON(),
+      user: user.toJSON(),
+      movie: movie.toJSON(),
+      scores: score.toJSON()
+    })
+  }
 }
 
 module.exports = ReviewController

@@ -1,0 +1,40 @@
+
+
+{% extends 'master' %}
+{% set active_page = "showreviews" %}
+
+{% block content %}
+<div class="panel-body">
+<h1 class="centered">Reviews for {{movie.title}}</h1>
+<a href="/new_review" class="btn btn-success btn-lg btn-block">New review</a>
+<p></p>
+{% for review in reviews %}
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <button type="button" onclick="window.location.href='/review/{{review.id}}'" class="close">Check out</button>
+    <h3 class="panel-title"> Title: {{ review.title }}</h3>
+    <h5 class="panel-title"> Created: {{ review.created_at }}</h5> 
+    <h5 class="panel-title"> Last updated: {{ review.updated_at }} </h5>
+  </div>
+  <div class="panel-body">
+    {% for user in users %}
+    {% if user.id == review.user_id %}
+    <p>Created by: {{ user.username }}</p>
+    {% for score in scores %}
+    {% if score.review_id==review.id %}
+    <p>Scores: {{ score.rating_1 }} | {{ score.rating_2 }} | {{ score.rating_3 }} | {{ score.rating_4 }} | {{ score.rating_5 }} | {{ score.rating_6 }}  </p>
+    {% endif %}
+    {% endfor %}
+    <p>Overall rating: {{ review.urating }}%</p>
+    {% endif %}
+    {% endfor %}
+    <p><a href="#" class="btn btn-warning" >Modify</a> <a href="/delete_r/{{review.id}}" class="btn btn-danger" >Delete</a></p>
+  </div>
+</div>
+
+{% else %}
+<h2> No reviews found </h2>
+{% endfor %}   
+
+</div>
+{% endblock %}

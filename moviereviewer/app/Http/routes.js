@@ -37,3 +37,7 @@ Route.get('/delete_r/:id', 'ReviewController.delete').middleware('auth')
 Route.get('/new_movie', 'MovieController.create').middleware('auth')
 Route.post('/create_movie', 'MovieController.store').middleware('auth')
 Route.get('/delete_m/:id', 'MovieController.delete').middleware('auth')
+
+Route.get('/movie/:id/reviews', 'MovieController.showReviews')
+Route.get('/new_review/:id', 'ReviewController.create')
+Route.get('/review/:id', 'ReviewController.show')

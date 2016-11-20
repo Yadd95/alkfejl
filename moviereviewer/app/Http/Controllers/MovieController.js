@@ -5,6 +5,7 @@ const Category = use('App/Model/Category')
 const Review = use('App/Model/Review')
 const Validator = use('Validator')
 const User = use('App/Model/User')
+const Score = use('App/Model/Score')
 
 class MovieController {
 
@@ -52,6 +53,20 @@ class MovieController {
     }
     yield movie.delete()
     res.redirect('/movies')
+  }
+  * showReviews(req,res){
+    const id = req.param('id');
+    const movie = yield Movie.find(id);
+    const reviews = yield movie.reviews().fetch();
+    const users = yield User.all();
+    const scores = yield movie.scores().fetch();
+    yield res.sendView('showreviews', {
+        reviews: reviews.toJSON(),
+        movie: movie.toJSON(),
+        users: users.toJSON(),
+        scores: scores.toJSON()
+
+        });
   }
 
 }
