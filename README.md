@@ -58,4 +58,79 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 
 Értékelés: Egy egész szám 1-től 5-ig, amivel a film adott jellemzőjét(a fentebb felsoroltakra bontva) osztályozza a felhasználó
 
-## Képek
+
+## Tervezés
+### Felépítés
+
+**Oldaltérkép:**
+
++ **Publikus:**
+  + Kezdőlap
+  + Bejelentkezés
+  + Regisztráció
+  + Filmek listázása
+    + Film megtekintése 
+      + Bemutatók listázása
+        + Bemutató megtekintése
+        
++ **Bejelentkezett Felhasználónak:**
+  + Kezdőlap
+  + Filmek listázása
+    + Film megtekintése
+      + Bemutatók listázása
+        + Bemutató megtekintése
+      + Bemutató hozzáadása
+  + Saját bemutatók listázása   
+    + Bemutató hozzáadása
+    + Bemutató megtekintése
+    + Bemutató törlése
+    + Bemutató szerkesztése
+  + Kijelentkezés
+
++ **Bejelentkezett Adminisztrátoroknak:**
+  + Kezdőlap
+  + Filmek listázása
+    + Új film hozzáadása
+    + Film szerkesztése
+    + Film törlése
+    + Film megtekintése
+      + Bemutatók listázása
+        + Bemutató szerkesztése
+        + Bemutató törlése
+        + Bemutató megtekintése
+      + Bemutató hozzáadása
+  + Saját bemutatók listázása   
+    + Bemutató hozzáadása
+    + Bemutató megtekintése
+    + Bemutató törlése
+    + Bemutató szerkesztése
+  + Kijelentkezés
+
+
+**Végpontok**
+
++ **GET/**: főoldal
++ **GET/login**: bejelentkező adatok felküldése
++ **GET/register**: regisztrációs oldal
++ **GET/registraion**: regisztrációs adatok felküldése
++ **GET/logout**: kijelentkezés kezelése 
++ **GET/reviews**: saját bemutatók oldal
++ **GET/profile**: profil oldal
++ **POST/movies**: filmek listája oldal
++ **GET/new_review**: új bemutató oldal
++ **POS/create_review**: új bemutató adatainak felküldése
++ **GET/delete_r/:id**: bemutató törlése
++ **GET/modify_r/:id**: bemutató szerkesztése
++ **POST/edit_r/:id**: szerkesztés felküldése 
++ **GET/new_movie**: új film felvétele
++ **POST/create_movie**: új film adatainak felküldése
++ **GET/delete_m/:id**: film törlése
++ **GET/modify_m/:id**: film szerkesztése
++ **POST/edit_m/:id**: szerkesztés adatainak felküldése
++ **GET/filter**: Film lista szűrése 
++ **GET/movie/:id/reviews**: A kiválasztott filmhez tartozó bemutatók listázása
++ **GET/new_review/:id**: Új bemutató készítése
++ **GET/review/:id**: Egy bemutató megtekintése
++ **GET/movie/:id/show**: Egy film adatainak megtekintése
+
+
