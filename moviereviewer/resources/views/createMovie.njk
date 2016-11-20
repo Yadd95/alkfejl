@@ -1,0 +1,55 @@
+{% extends 'master' %}
+{% set active_page = "create_movie" %}
+{% block content %}
+{% for error in old('errors') %}
+<div class="alert alert-danger">
+
+    <li> {{ error.message }} </li>
+
+</div>
+{% endfor %}
+<div class="content">
+  {{ form.open({action: 'MovieController.store'}) }}
+
+    {{ csrfField }}
+    <div class="smallerarea">
+    <fieldset class="form-group">
+      {{ form.label('Title') }}
+      {{ form.text('title', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    <fieldset class="form-group">
+      {{ form.label('Director') }}
+      {{ form.text('director', null, { class: 'form-control' }) }}
+    </fieldset>
+    <div class="twocharcode">
+    <fieldset class="form-group">
+      {{ form.label('Origin') }}
+      <input type="text" name="origin" class="form-control" id="origin" maxlength="2" />
+    </fieldset>
+    </div>
+    <div class="smallfield">
+    <fieldset class="form-group">
+      <label for="category_id">Category</label>
+      <select class="form-control" id="category_id" name="category_id">
+        {% for category in categories %}
+        <option value="{{ category.id }}"
+          {% if category.id == old('category_id') %}
+          selected
+          {% endif %}
+        >{{ category.name }}</option>
+        {% endfor %}
+      </select>
+    </fieldset>
+    </div>
+    <div>
+    <fieldset class="form-group">
+      {{ form.label('Plot') }}
+       <textarea rows="25" name="plot" class="form-control" id="plot"></textarea>
+    </fieldset>
+
+    {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
+
+  {{ form.close() }}
+  </div>
+{% endblock %}

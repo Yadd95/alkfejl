@@ -58,3 +58,4 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 
 Értékelés: Egy egész szám 1-től 5-ig, amivel a film adott jellemzőjét(a fentebb felsoroltakra bontva) osztályozza a felhasználó
 
+## Képek

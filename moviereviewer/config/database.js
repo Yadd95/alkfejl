@@ -29,6 +29,7 @@ module.exports = {
   */
   sqlite: {
     client: 'sqlite3',
+    debug: true,
     connection: {
       filename: Helpers.databasePath('development.sqlite')
     },

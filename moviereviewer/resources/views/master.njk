@@ -1,38 +1,64 @@
 <!doctype html>
+    {% set active_page = active_page|default('main') -%}
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MovieReviewer</title>
 
-  <title>AdonisJs - Node.Js MVC Framework</title>
-
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
   <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      {% if currentUser %}
+      <a class="navbar-brand" href="#">{{ currentUser.username }}</a>
+      {% else %} 
+      <span class="navbar-brand">Vendég</span>
+      {% endif %}
 
-  <section>
-    <div class="__wrapper">
-      {% block content %}{% endblock %}
-
-      {% block footer %}
-        <div class="__footer">
-          <ul>
-            <li>
-              <a href="https://twitter.com/intent/tweet?url=http://adonisjs.com&text=I am using AdonisJs, a practical MVC framework for nodejs&hashtags=nodejs,adonisframework" target="_blank">
-                <img src="/assets/twitter.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adonisjs/adonis-framework" target="_blank"><img src="/assets/github.svg"></a>
-            </li>
-          </ul>
-        </div>
-      {% endblock %}
     </div>
-  </section>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul id="navigation" class="nav navbar-nav navbar-right">
+        {% if currentUser %}
+        <li {% if active_page == "profile" %} class="active"{% endif
+  %}><a href="/profile">My Profile</a></li>
+        <li {% if active_page =="reviews" %} class="active"{% endif
+  %}><a href="/reviews">My Reviews</a></li>
+        <li><a href="/logout">Logout</a></li>
 
+        {% else %}
+
+        <form  method="GET" action="/login" enctype="application/x-www-form-urlencoded" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" name='username' class="form-control" placeholder="Username">
+          <input type="password" name='password' class="form-control" placeholder="Password">          
+        </div>
+        <button type="submit" class="btn btn-default">Login</button>
+       </form>
+
+        <li {% if active_page == "register" %} class="active"{% endif
+         %}><a href="/register">Register</a></li>
+
+        {% endif %}
+       
+      </ul>
+
+      <ul class="nav navbar-nav navbar">
+        <li {% if active_page == "main" %} class="active"{% endif
+  %}><a href="/">Main <span class="sr-only">(current)</span></a></li>
+        <li {% if  active_page == "movies" %} class="active"{% endif
+  %}><a href="/movies">Film List</a></li>
+  
+      </ul>
+    </div>
+  </div>
+</nav>
+<section>
+ {% block content %}{% endblock %}
+</section>
 </body>
 </html>

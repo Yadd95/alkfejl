@@ -1,0 +1,3 @@
+node_modules\.bin\admin config\express-admin
+npm run dev
+node ace ...

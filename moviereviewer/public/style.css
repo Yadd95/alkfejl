@@ -6,7 +6,7 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   font-weight: lighter;
-  background: #ffffff;
+  background-color: lightsteelblue;
 }
 
 * {
@@ -99,4 +99,74 @@ body {
 
 .__footer li a:hover {
   opacity: 1;
+}
+
+
+.form-pad{
+  padding-top: 10%;
+}
+
+.formu{
+  padding: 40px 40px;
+  display: block;
+  font-weight: bold;
+  color: royalblue;
+  width: 50%;
+  font-size: 120%;
+
+}
+
+.content{
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: bold;
+  color: royalblue;
+  width: 60%;
+  font-size: 120%;
+}
+.smallerarea{
+  width: 90%;
+  margin: 0 auto;
+}
+.smallfield{
+  width: 20%;
+}
+.twocharcode{
+ width: 10%;
+}
+.centered{
+  text-align:   center;
+}
+.ratings{
+    margin: 0 auto;
+  background: springgreen;
+  padding-left: 35px;
+  width: 65%;
+}
+.maintext{
+  background: navajowhite;
+  padding: 20px;
+}
+.textpart{
+  border: dashed 1px dodgerblue;
+  margin: 0 auto;
+  width: 90%;
+  padding: 10px;
+  background: khaki;
+}
+.scores{
+  text-align:   center;
+  background-color: sandybrown;
+  width: 40%;
+  margin: 0 auto;
+  border: dashed 1px black;
+  padding: 10px;
+}
+.info{
+    text-align:   center;
+  background-color: skyblue;
+  width: 40%;
+  margin: 0 auto;
+  border: dashed 1px black;
+  padding: 10px;
 }

@@ -1,0 +1,37 @@
+
+
+{% extends 'master' %}
+{% set active_page = "reviews" %}
+
+{% block content %}
+<div class="panel-body">
+<h1 class="centered">My Reviews</h1>
+<a href="/new_review" class="btn btn-success btn-lg btn-block">New review</a>
+<p></p>
+{% for review in reviews %}
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <button type="button" onclick="window.location.href='../review/{{review.id}}'" class="close">Check out</button>
+    <h3 class="panel-title"> Title: {{ review.title }}</h3>
+    <h5 class="panel-title"> Created: {{ review.created_at }}</h5> 
+    <h5 class="panel-title">Last updated: {{ review.updated_at }} </h5>
+  </div>
+  <div class="panel-body">
+    {% for movie in movies %}
+    {% if movie.id == review.movie_id %}
+    <p>Movie title: {{ movie.title }}</p>
+    <p>Director: {{ movie.director }}</p>
+    <p>My overall rating: {{ review.urating }}%</p>
+    <p>Average Rating: {{ movie.rating}}% </p>
+    {% endif %}
+    {% endfor %}
+    <p><a href="/modify_r/{{review.id}}" class="btn btn-warning" >Modify</a> <a href="/delete_r/{{review.id}}" class="btn btn-danger" >Delete</a></p>
+  </div>
+</div>
+
+{% else %}
+<h2> No reviews found </h2>
+{% endfor %}   
+
+</div>
+{% endblock %}

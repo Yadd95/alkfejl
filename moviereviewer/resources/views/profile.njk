@@ -1,0 +1,22 @@
+
+
+{% extends 'master' %}
+{% set active_page = "profile" %}
+
+{% block content %}
+<div class="formu">
+<form class="form-horizontal">
+
+{{ csrfField }}
+
+
+  <fieldset>
+    <p> Username: {{ currentUser.username }}</p>
+    <p> E-mail: {{ currentUser.email }}</p>
+    <p> Number of reviews: {{ number}}</p>
+    <hr>
+    
+   </fieldset>
+</form>
+</div>
+{% endblock %}

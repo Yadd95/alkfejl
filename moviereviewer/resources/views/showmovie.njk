@@ -1,0 +1,38 @@
+
+
+{% extends 'master' %}
+{% set active_page = "showmovie" %}
+
+{% block content %}
+<div class="panel-body">
+<div class="panel panel-info">
+  <div class="panel-heading">
+      <button type="button" onclick="window.location.href='/movie/{{movie.id}}/reviews'" class="close">Reviews</button>
+    <h3 class="panel-title"><strong> Title: {{ movie.title }} </strong></h3>
+  </div>
+  <div class="panel-body">
+ <h2 class="centered"> Movie Information: </h2>
+  <div class="info">
+    <h4> Title: {{ movie.title }} </h4>
+    <h4> Director: {{ movie.director }} </h4>
+    <h4> Origin: [{{movie.origin}}]</h4>
+  </div>
+  <hr>
+  <h2 class="centered"> Plot:</h2>
+    <div class="textpart">
+    {{ movie.plot }}
+    </div>
+    <hr>
+    <div class="scores">
+    <h3><strong>Average rating: {{ movie.rating }}% </strong></h3>
+    </div>
+    <hr>
+    {% if adminaccess %}
+    <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="/delete_m/{{movie.id}}" class="btn btn-danger" >Delete</a></p>
+    {% endif %}
+  </div>
+</div>
+ 
+
+</div>
+{% endblock %}
