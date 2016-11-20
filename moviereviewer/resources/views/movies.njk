@@ -7,6 +7,9 @@
 
 
 <div class="panel-body">
+
+<img src="/assets/movies.png" alt="Smiley face" height="200" width="242" class="image" >
+
 <h1 class="centered">Movies</h1>
 {% if adminaccess %}
 <a href="/new_movie" class="btn btn-success btn-lg btn-block">New movie</a>
@@ -16,7 +19,7 @@
          {{ csrfField }}
         <div class="form-group">
               <fieldset class="form-group">
-      <label for="category_id">Filter by category:</label>
+      <label for="category_id">Filter by genre:</label>
       <select class="form-control" id="category_id" name="category_id">
         <option value="0"> All </option>
         {% for category in categories %}
@@ -25,6 +28,7 @@
           selected
           {% endif %}
         >{{ category.name }}</option>
+
         {% endfor %}
       </select>
     </fieldset>
@@ -44,12 +48,13 @@
     <p>Director: {{ movie.director }}</p>
     <p>{% for category in categories %}
         {% if category.id == movie.category_id %}
-        Category: {{ category.name }}
+        Genre: {{ category.name }}
         {% endif %}
         {% endfor %}
     </p>
     <p>Number of reviews: {{ movie.count }}</p>
     <p>Average Overall Rating: {{ movie.rating}}% </p>
+    
     {% if adminaccess %}
     <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="/delete_m/{{movie.id}}" class="btn btn-danger" >Delete</a></p>
     {% endif %}

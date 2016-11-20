@@ -10,10 +10,10 @@ const Score = use('App/Model/Score')
 class MovieController {
 
     * store (req, res) {
-      const movieData = req.only('title','director','origin','category_id','plot') 
+      const movieData = req.only('title','director','origin','category_id','plot','release','writer','stars'/*,'avatar'*/) 
       const validation = yield Validator.validate(movieData, Movie.rules)
       if (validation.fails()) {
-            yield req.withOnly('title','director','origin','category_id','plot').andWith({errors: validation.messages()}).flash()
+            yield req.withOnly('title','director','origin','category_id','plot','release','writer','stars').andWith({errors: validation.messages()}).flash()
             res.redirect('back')
             return
       }
@@ -60,8 +60,9 @@ class MovieController {
     const reviews = yield movie.reviews().fetch();
     const users = yield User.all();
     const scores = yield movie.scores().fetch();
-    const uid = req.currentUser.id;
-        if (uid){
+
+        if (req.currentUser){
+              const uid = req.currentUser.id;
         const user = yield User.find(uid);
            const admin = yield user.access().fetch();
         var access = false;
@@ -97,8 +98,9 @@ class MovieController {
   * showMovie(req,res){
     const id = req.param('id');
     const movie = yield Movie.find(id);
+
+    if (req.currentUser){
     const uid = req.currentUser.id;
-    if (uid){
     const user = yield User.find(uid);
             const admin = yield user.access().fetch();
         var access = false;
@@ -135,7 +137,7 @@ class MovieController {
 
   }
   * edit (req, res){
-    const movieData = req.only('title', 'director','origin', 'category_id','plot')
+    req.only('title','director','origin','category_id','plot','release','writer','stars') 
     const validation = yield Validator.validate(movieData, Movie.rules);
     const id = req.param('id');
     if (validation.fails()) {
@@ -149,6 +151,9 @@ class MovieController {
     oldmovie.origin = movieData.origin;
     oldmovie.category_id = movieData.category_id;
     oldmovie.plot = movieData.plot;
+    oldmovie.writer = movieData.writer;
+    oldmovie.stars = movieData.stars;
+    oldmovie.release = movieData.release;
 
     yield oldmovie.save();
     res.redirect('/movie/' + id  + '/show')
@@ -201,8 +206,9 @@ class MovieController {
     * movies(req,res){
         const categories = yield Category.all()
         const movies = yield Movie.all()
-        const id = req.currentUser.id;
-        if (id){
+
+        if (req.currentUser){
+          const id = req.currentUser.id;
         const user = yield User.find(id);
         const admin = yield user.access().fetch();
         var access = false;

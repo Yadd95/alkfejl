@@ -27,7 +27,22 @@
       {{ form.label('Origin') }}
       <input type="text" name="origin" class="form-control" id="origin" maxlength="2" />
     </fieldset>
+        <fieldset class="form-group">
+      {{ form.label('Year of release') }}
+           <input type="text" name="release" class="form-control" id="release" maxlength="4" />
+    </fieldset>
+
     </div>
+            <fieldset class="form-group">
+      {{ form.label('Writers') }}
+      {{ form.text('writer', null, { class: 'form-control' }) }}
+    </fieldset>
+    <fieldset class="form-group">
+      {{ form.label('Stars') }}
+      {{ form.text('stars', null, { class: 'form-control' }) }}
+    </fieldset>
+
+       </fieldset>
     <div class="smallfield">
     <fieldset class="form-group">
       <label for="category_id">Category</label>
@@ -47,7 +62,7 @@
       {{ form.label('Plot') }}
        <textarea rows="25" name="plot" class="form-control" id="plot"></textarea>
     </fieldset>
-
+      {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
 
   {{ form.close() }}

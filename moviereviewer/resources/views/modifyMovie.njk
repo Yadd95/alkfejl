@@ -22,12 +22,26 @@
       {{ form.label('Director') }}
       {{ form.text('director', movie.director, { class: 'form-control' }) }}
     </fieldset>
+
     <div class="twocharcode">
     <fieldset class="form-group">
       {{ form.label('Origin') }}
       <input type="text" name="origin" class="form-control" id="origin" maxlength="2" value={{movie.origin}} />
     </fieldset>
+            <fieldset class="form-group">
+      {{ form.label('Year of release') }}
+           <input type="text" name="release" class="form-control" id="release" maxlength="4" value={{movie.release}} />
+    </fieldset>
     </div>
+    <fieldset class="form-group">
+      {{ form.label('Writers') }}
+      {{ form.text('writer', movie.writer, { class: 'form-control' }) }}
+    </fieldset>
+    <fieldset class="form-group">
+      {{ form.label('Stars') }}
+      {{ form.text('stars', movie.stars, { class: 'form-control' }) }}
+    </fieldset>
+
     <div class="smallfield">
     <fieldset class="form-group">
       <label for="category_id">Category</label>

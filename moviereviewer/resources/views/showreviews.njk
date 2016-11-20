@@ -6,7 +6,9 @@
 {% block content %}
 <div class="panel-body">
 <h1 class="centered">Reviews for {{movie.title}}</h1>
+{% if currentUser %}
 <a href="/new_review" class="btn btn-success btn-lg btn-block">New review</a>
+{% endif %}
 <p></p>
 {% for review in reviews %}
 <div class="panel panel-info">

@@ -113,9 +113,11 @@ class ReviewController {
     const user = yield review.user().fetch();
     const scores = yield review.scores().fetch();
     const movie = yield review.movie().fetch();
+            var access = false;
+    if(req.currentUser){
     const curruser = req.currentUser;
     const admin = yield curruser.access().fetch();
-        var access = false;
+
         var adminaccess;
         admin.forEach( function (a)
         {
@@ -128,7 +130,9 @@ class ReviewController {
           access = true;
           }else{
           access = false;
-        }
+    }}else{
+      access = false;
+    }
 
     yield res.sendView('showreview',{
       review: review.toJSON(),
