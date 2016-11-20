@@ -7,7 +7,7 @@
 <div class="panel-body">
 <h1 class="centered">Movies</h1>
 {% if adminaccess %}
-<a href="#" class="btn btn-success btn-lg btn-block">New movie</a>
+<a href="/new_movie" class="btn btn-success btn-lg btn-block">New movie</a>
 {% endif %}
 
 <hr>
@@ -28,13 +28,13 @@
     <p>Number of reviews: {{ movie.count }}</p>
     <p>Average Rating: {{ movie.rating}} </p>
     {% if adminaccess %}
-    <p><a href="#" class="btn btn-warning" >Modify</a> <a href="#" class="btn btn-danger" >Delete</a></p>
+    <p><a href="#" class="btn btn-warning" >Modify</a> <a href="/delete_m/{{movie.id}}" class="btn btn-danger" >Delete</a></p>
     {% endif %}
   </div>
 </div>
 
 {% else %}
-<h2> No reviews found </h2>
+<h2> No movies found </h2>
 {% endfor %}   
 
 </div>

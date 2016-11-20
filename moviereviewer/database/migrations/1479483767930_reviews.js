@@ -7,7 +7,7 @@ class ReviewsTableSchema extends Schema {
   up () {
     this.create('reviews', (table) => {
       table.increments()
-      table.string('title').notNullable().unique()
+      table.string('title').notNullable()
       table.integer('movie_id').unsigned().references('id').inTable('movies')
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.text('content')

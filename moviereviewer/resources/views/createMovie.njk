@@ -1,0 +1,50 @@
+{% extends 'master' %}
+
+{% block content %}
+{% for error in old('errors') %}
+<div class="alert alert-danger">
+
+    <li> {{ error.message }} </li>
+
+</div>
+{% endfor %}
+  {{ form.open({action: 'MovieController.store'}) }}
+
+    {{ csrfField }}
+
+    <fieldset class="form-group">
+      {{ form.label('Title') }}
+      {{ form.text('title', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    <fieldset class="form-group">
+      {{ form.label('Director') }}
+      {{ form.text('director', null, { class: 'form-control' }) }}
+    </fieldset>
+    <fieldset class="form-group">
+      {{ form.label('Origin') }}
+      {{ form.text('origin', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="category_id" class="col-lg-2 control-label">Category</label>
+      <select class="form-control" id="category_id" name="category_id">
+        {% for category in categories %}
+        <option value="{{ category.id }}"
+          {% if category.id == old('category_id') %}
+          selected
+          {% endif %}
+        >{{ category.name }}</option>
+        {% endfor %}
+      </select>
+    </fieldset>
+
+    <fieldset class="form-group">
+      {{ form.label('Plot') }}
+      {{ form.textarea('plot', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
+
+  {{ form.close() }}
+{% endblock %}

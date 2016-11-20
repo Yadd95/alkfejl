@@ -1,0 +1,41 @@
+{% extends 'master' %}
+
+{% block content %}
+{% for error in old('errors') %}
+<div class="alert alert-danger">
+
+    <li> {{ error.message }} </li>
+
+</div>
+{% endfor %}
+  {{ form.open({action: 'ReviewController.store'}) }}
+
+    {{ csrfField }}
+
+    <fieldset class="form-group">
+      {{ form.label('Title') }}
+      {{ form.text('title', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="movie_id" class="col-lg-2 control-label">Movie</label>
+      <select class="form-control" id="movie_id" name="movie_id">
+        {% for movie in movies %}
+        <option value="{{ movie.id }}"
+          {% if movie.id == old('movie_id') %}
+          selected
+          {% endif %}
+        >{{ movie.title }}</option>
+        {% endfor %}
+      </select>
+    </fieldset>
+
+    <fieldset class="form-group">
+      {{ form.label('Text') }}
+      {{ form.textarea('content', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
+
+  {{ form.close() }}
+{% endblock %}

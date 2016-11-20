@@ -604,54 +604,6 @@
                 }
             },
             {
-                "name": "sum",
-                "verbose": "sum",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "count",
-                "verbose": "count",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "rating",
-                "verbose": "rating",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
                 "name": "created_at",
                 "verbose": "created_at",
                 "control": {
@@ -695,12 +647,12 @@
             "readonly": false
         }
     },
-    "users": {
-        "slug": "users",
+    "admins": {
+        "slug": "admins",
         "table": {
-            "name": "users",
+            "name": "admins",
             "pk": "id",
-            "verbose": "users"
+            "verbose": "admins"
         },
         "columns": [
             {
@@ -720,45 +672,13 @@
                 }
             },
             {
-                "name": "username",
-                "verbose": "username",
+                "name": "user_id",
+                "verbose": "user_id",
                 "control": {
                     "text": true
                 },
-                "type": "varchar(80)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "email",
-                "verbose": "email",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(254)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "password",
-                "verbose": "password",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(60)",
-                "allowNull": false,
+                "type": "integer",
+                "allowNull": true,
                 "defaultValue": null,
                 "listview": {
                     "show": true
@@ -959,12 +879,12 @@
             "readonly": false
         }
     },
-    "admins": {
-        "slug": "admins",
+    "users": {
+        "slug": "users",
         "table": {
-            "name": "admins",
+            "name": "users",
             "pk": "id",
-            "verbose": "admins"
+            "verbose": "users"
         },
         "columns": [
             {
@@ -984,13 +904,45 @@
                 }
             },
             {
-                "name": "user_id",
-                "verbose": "user_id",
+                "name": "username",
+                "verbose": "username",
                 "control": {
                     "text": true
                 },
-                "type": "integer",
-                "allowNull": true,
+                "type": "varchar(80)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "email",
+                "verbose": "email",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(254)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "password",
+                "verbose": "password",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(60)",
+                "allowNull": false,
                 "defaultValue": null,
                 "listview": {
                     "show": true

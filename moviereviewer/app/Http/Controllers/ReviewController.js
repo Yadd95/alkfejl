@@ -7,7 +7,36 @@ const Validator = use('Validator')
 const User = use('App/Model/User')
 
 class ReviewController {
-    
+
+    * store (req, res) {
+      const reviewData = req.only('title','movie_id','content'/*,'urating'*/) 
+      const validation = yield Validator.validate(reviewData, Review.rules)
+      if (validation.fails()) {
+            yield req.withOnly('title','movie_id','content'/*,'urating'*/).andWith({errors: validation.messages()}).flash()
+            res.redirect('back')
+            return
+      }
+      reviewData.user_id = req.currentUser.id;
+      reviewData.urating = 5;
+      const savedReview = yield Review.create(reviewData);
+      const movie = yield savedReview.movie().fetch();
+      movie.sum = +movie.sum + +reviewData.urating;
+      movie.count = movie.count + 1;
+      movie.rating = movie.sum/movie.count;
+
+      yield movie.save()
+      yield savedReview.save()
+      res.redirect('/reviews')
+
+    }
+
+    * create (req, res) {
+    const movies = yield Movie.all()
+    yield res.sendView('createReview', {
+      movies: movies.toJSON()
+    });
+  }
+
     * index (req, res) {
     yield res.sendView('main');
     
@@ -39,12 +68,17 @@ class ReviewController {
         adminaccess: access
         });
 
- 
-        
+    }
+    * delete (req, res) {
+    const id = req.param('id');
+    const review = yield Review.find(id);
 
-
-
-
+    if (req.currentUser.id !== review.user_id) {
+      res.unauthorized('Access denied.')
+      return
+    }
+    yield review.delete()
+    res.redirect('/reviews')
     }
 }
 
