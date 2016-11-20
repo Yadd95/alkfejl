@@ -10,7 +10,10 @@ class Movie extends Lucid {
            director: 'required',
            origin: 'required',
            category_id: 'required',
-           plot: 'required'
+           plot: 'required',
+           writer: 'required',
+           stars: 'required',
+           release: 'required'
     }     
    }
 

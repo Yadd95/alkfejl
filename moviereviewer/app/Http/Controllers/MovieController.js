@@ -10,10 +10,10 @@ const Score = use('App/Model/Score')
 class MovieController {
 
     * store (req, res) {
-      const movieData = req.only('title','director','origin','category_id','plot') 
+      const movieData = req.only('title','director','origin','category_id','plot','release','writer','stars') 
       const validation = yield Validator.validate(movieData, Movie.rules)
       if (validation.fails()) {
-            yield req.withOnly('title','director','origin','category_id','plot').andWith({errors: validation.messages()}).flash()
+            yield req.withOnly('title','director','origin','category_id','plot','release','writer','stars').andWith({errors: validation.messages()}).flash()
             res.redirect('back')
             return
       }
@@ -135,7 +135,7 @@ class MovieController {
 
   }
   * edit (req, res){
-    const movieData = req.only('title', 'director','origin', 'category_id','plot')
+    req.only('title','director','origin','category_id','plot','release','writer','stars') 
     const validation = yield Validator.validate(movieData, Movie.rules);
     const id = req.param('id');
     if (validation.fails()) {
@@ -149,6 +149,9 @@ class MovieController {
     oldmovie.origin = movieData.origin;
     oldmovie.category_id = movieData.category_id;
     oldmovie.plot = movieData.plot;
+    oldmovie.writer = movieData.writer;
+    oldmovie.stars = movieData.stars;
+    oldmovie.release = movieData.release;
 
     yield oldmovie.save();
     res.redirect('/movie/' + id  + '/show')
