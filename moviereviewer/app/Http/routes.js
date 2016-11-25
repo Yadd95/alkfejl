@@ -28,7 +28,7 @@ Route.get('/registration', 'UserController.store')
 //Route.post('/registration', 'UserController.postRegistration')
 
 Route.get('/reviews', 'UserController.reviews').middleware('auth')
-Route.get('/profile', 'UserController.profile').middleware('auth')
+Route.get('/profile/:id', 'UserController.profile').middleware('auth')
 Route.get('/movies', 'MovieController.movies')
 Route.get('/new_review', 'ReviewController.create').middleware('auth')
 Route.post('/create_review', 'ReviewController.store').middleware('auth')

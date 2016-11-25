@@ -1,7 +1,11 @@
 
 
 {% extends 'master' %}
+{% if currentUser.id == user.id %}
 {% set active_page = "profile" %}
+{% else %}
+{% set active_page = "otherprofile" %}
+{% endif %}
 
 {% block content %}
 <div class="formu">
@@ -11,8 +15,8 @@
 
 
   <fieldset>
-    <p> Username: {{ currentUser.username }}</p>
-    <p> E-mail: {{ currentUser.email }}</p>
+    <p> Username: {{ user.username }}</p>
+    <p> E-mail: {{ user.email }}</p>
     <p> Number of reviews: {{ number}}</p>
     <hr>
     

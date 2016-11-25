@@ -598,6 +598,22 @@
                 "editview": {
                     "show": true
                 }
+            },
+            {
+                "name": "avatar",
+                "verbose": "avatar",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(250)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
             }
         ],
         "mainview": {
@@ -1214,6 +1230,254 @@
             {
                 "name": "rating_overall",
                 "verbose": "rating_overall",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "created_at",
+                "verbose": "created_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "updated_at",
+                "verbose": "updated_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "actors": {
+        "slug": "actors",
+        "table": {
+            "name": "actors",
+            "pk": "id",
+            "verbose": "actors"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "first_name",
+                "verbose": "first_name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "last_name",
+                "verbose": "last_name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "age",
+                "verbose": "age",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "created_at",
+                "verbose": "created_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "updated_at",
+                "verbose": "updated_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "middle_name",
+                "verbose": "middle_name",
+                "control": {
+                    "text": true
+                },
+                "type": "TEXT",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "origin",
+                "verbose": "origin",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "features": {
+        "slug": "features",
+        "table": {
+            "name": "features",
+            "pk": "id",
+            "verbose": "features"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "movie_id",
+                "verbose": "movie_id",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "actor_id",
+                "verbose": "actor_id",
                 "control": {
                     "text": true
                 },
