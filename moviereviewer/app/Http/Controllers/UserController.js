@@ -8,13 +8,13 @@ const Review = use('App/Model/Review')
 
 class UserController {
     * profile(req,res){
-        const id = req.currentUser.id;
+        const id = req.param('id');
         const user = yield User.find(id);
         const reviews = yield user.reviews().fetch();
         const rev = reviews.toJSON();
         var n=rev.length;
         
-        yield res.sendView('profile', {number: n});
+        yield res.sendView('profile', {user: user, number: n});
 
     }
 
@@ -68,8 +68,8 @@ class UserController {
             res.redirect('back')
             return
         }
-        
-        const savedUser = yield User.create(userData);
+        const reqData = req.only('username', 'email', 'password')
+        const savedUser = yield User.create(reqData);// a hashelést egy hook csinálja
         yield req.withAll().andWith({regmessage: true}).flash()
         res.redirect('/')
     }

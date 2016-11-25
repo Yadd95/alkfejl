@@ -28,6 +28,10 @@ class Movie extends Lucid {
   scores () {
     return this.hasMany('App/Model/Score')
   }
+  
+  stars () {
+    return this.hasMany('App/Model/Feature')
+  }
 }
 
 module.exports = Movie

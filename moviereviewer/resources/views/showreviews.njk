@@ -21,7 +21,7 @@
   <div class="panel-body">
     {% for user in users %}
     {% if user.id == review.user_id %}
-    <p>Created by: {{ user.username }}</p>
+    <p>Created by: <a href="/profile/{{user.id}}">{{ user.username }}</a></p>
     {% for score in scores %}
     {% if score.review_id==review.id %}
     <p>Scores: {{ score.rating_1 }} | {{ score.rating_2 }} | {{ score.rating_3 }} | {{ score.rating_4 }} | {{ score.rating_5 }} | {{ score.rating_6 }}  </p>
