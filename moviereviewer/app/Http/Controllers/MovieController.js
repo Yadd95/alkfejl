@@ -29,6 +29,27 @@ class MovieController {
 
     * create (req, res) {
     const categories = yield Category.all()
+    const user = yield User.find(req.currentUser.id);
+        const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+  
+          if(adminaccess)
+          {
+            access = true;
+          }else{
+              access = false;
+        }   
+
+    if (!access) {
+      res.unauthorized('Access denied.')
+      return
+    }
+
     yield res.sendView('createMovie', {
       categories: categories.toJSON()
     });
@@ -37,6 +58,26 @@ class MovieController {
 
   * delete (req, res) {
     const id = req.param('id');
+    const user = yield User.find(req.currentUser.id);
+        const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+  
+          if(adminaccess)
+          {
+            access = true;
+          }else{
+              access = false;
+        }   
+
+    if ( !access) {
+      res.unauthorized('Access denied.')
+      return
+    }
     const movie = yield Movie.find(id);
     const reviews = yield movie.reviews().fetch();
     var count=0; 
@@ -128,6 +169,26 @@ class MovieController {
   }
   * modify(req,res){
     const categories = yield Category.all()
+    const user = yield User.find(req.currentUser.id);
+        const admin = yield user.access().fetch();
+        var access = false;
+        var adminaccess;
+        admin.forEach( function (a)
+        {
+          adminaccess=a;
+        });
+  
+          if(adminaccess)
+          {
+            access = true;
+          }else{
+              access = false;
+        }   
+
+    if ( !access) {
+      res.unauthorized('Access denied.')
+      return
+    }
     const id = req.param('id');
     const movie = yield Movie.find(id);
     yield res.sendView('modifyMovie', {
@@ -168,8 +229,9 @@ class MovieController {
          movies = yield category.movies().fetch();
         }
         const categories = yield Category.all();
-        const id = req.currentUser.id;
-        if (id){
+        
+        if (req.currentUser){
+          const id = req.currentUser.id;
         const user = yield User.find(id);
         const admin = yield user.access().fetch();
         var access = false;
