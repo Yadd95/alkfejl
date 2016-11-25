@@ -54,9 +54,9 @@
   {{form.label('Acting:') }} <input type="number" name="rating_6" min="1" max="10"></p>
     </fieldset>
     </div>
-           {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
+          
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
-
+ {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
   {{ form.close() }}
 
   </div>
