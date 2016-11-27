@@ -46,7 +46,7 @@
     <div class="ratings">
   <fieldset class="form-group">
   <div class="centered">
-   {{ form.label('Rating (1-5):') }}
+   {{ form.label('Rating (1-10):') }}
    </div>
   <p>  {{ form.label('Sound:') }} <input type="number" name="rating_1" min="1" max="10"> {{form.label('Visuals:') }} <input type="number" name="rating_2" min="1" max="10"> {{form.label('Setting:') }} <input type="number" name="rating_3" min="1" max="10"></p>
   <p> {{form.label('Characters:') }} <input type="number" name="rating_4" min="1" max="10">
@@ -54,9 +54,9 @@
   {{form.label('Acting:') }} <input type="number" name="rating_6" min="1" max="10"></p>
     </fieldset>
     </div>
-           {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
+          
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
-
+ {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
   {{ form.close() }}
 
   </div>
