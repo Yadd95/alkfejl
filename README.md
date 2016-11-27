@@ -1,6 +1,22 @@
 # MovieReviewer
 Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatókat, értékeléseket írni, ajánlási és pontozási rendszerrel.
 
+# Teszteléshez
+* Admin: * 
+ - Felhasználónév: admin
+ - Jelszó: admin
+
+
+
+# Konfigurálás
+
+* Függőségek telepítése: npm i
+* Kívánt adatbázismotor telepítése, ha még nincs, pl: npm i sqlite3
+* .env.example átnevezése .env-re, és tartalmának ellenőrzése
+* Ez a parancs futtatható bármikor, ha tiszta adatbázist akarunk, ekkor figyeljünk a storage könyvtárra
+* Indítás: npm start vagy npm run dev
+
+
 ## Funkcionális elvárások
 
 ### Adminisztrátoroknak
