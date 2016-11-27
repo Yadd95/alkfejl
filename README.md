@@ -2,7 +2,7 @@
 Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatókat, értékeléseket írni, ajánlási és pontozási rendszerrel.
 
 # Teszteléshez
-* Admin: * 
+* Admin: 
  - Felhasználónév: admin
  - Jelszó: admin
 
