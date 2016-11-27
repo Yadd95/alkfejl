@@ -11,9 +11,7 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 # Konfigurálás
 
 * Függőségek telepítése: npm i
-* Adatbázismotor telepítése (npm i sqlite3)
 * .env.example átnevezése .env-re, és tartalmának ellenőrzése
-* Adatbázis inicializálása a migrációkkal, ha új adatbázist kezdenénk (node ace migration:run)
 * Indítás: npm start vagy npm run dev
 
 
