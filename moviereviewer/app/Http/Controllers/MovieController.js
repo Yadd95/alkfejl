@@ -37,7 +37,7 @@ class MovieController {
       movieData.count=0;
       movieData.rating=0;
       const movie = yield Movie.create(movieData);
-      yield movie.save()
+     yield movie.save()
       /* megkeresésük -> ha léteznek, az id elmentése, ha nem, akkor új színész létrehozása */
       const actors = yield Actor.all()
       var freshActors = [];
@@ -53,16 +53,15 @@ class MovieController {
             newactor = false; 
             actorid = a.id;
             var splitmiddlename = '';
+            st+= s[1] + ' ' + a.middle_name
             if(s.length==2 && (a.middle_name!=''&&a.middle_name!=null)){
               
                newactor = true;
                actorid = 0;
             }
             if(a.middle_name!=null) splitmiddlename= a.middle_name.split(/[ ]+/)
-            
-            
             for(var i =1; i<s.length-1; i++){
-              if(s[i]==splitmiddlename[i]){
+              if(s[i]==splitmiddlename[i-1]){
                 newactor = false;
                 actorid = a.id;
               }else{
