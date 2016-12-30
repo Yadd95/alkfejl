@@ -24,7 +24,7 @@ Route.get('/login', 'UserController.login')
 Route.get('/logout', 'UserController.logout')
 
 Route.get('/register', 'UserController.register')
-Route.get('/registration', 'UserController.store')
+Route.post('/register', 'UserController.store')
 //Route.post('/registration', 'UserController.postRegistration')
 
 Route.get('/reviews', 'UserController.reviews').middleware('auth')
@@ -48,3 +48,9 @@ Route.get('/new_review/:id', 'ReviewController.create')
 Route.get('/review/:id', 'ReviewController.show')
 Route.get('/movie/:id/show', 'MovieController.showMovie')
 
+
+Route.group('ajax', function () {
+
+  //Route.post   ('/login','UserController.ajaxLogin').as('a_login')
+  Route.get    ('/user/exists','UserController.checkUserExists').as('a_user_exists')
+  }).prefix('/ajax')

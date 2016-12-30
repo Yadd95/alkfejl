@@ -73,6 +73,24 @@ class UserController {
         yield req.withAll().andWith({regmessage: true}).flash()
         res.redirect('/')
     }
+    
+    * checkUserExists(req, resp) {
+
+    let user;
+    if (req.input('username')) {
+      user = yield User.findBy('username', req.input('username'))
+    }
+    else {
+      user = yield User.findBy('email', req.input('email'))
+    }
+
+    if (user) {
+      resp.status(400).send('exists')
+    }
+    else {
+      resp.send('ok')
+    }
+  }
 
 }
 
