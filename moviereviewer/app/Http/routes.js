@@ -18,8 +18,8 @@
 const Route = use('Route')
 
 Route.get('/', 'ReviewController.index')
-
-Route.get('/login', 'UserController.login')
+Route.get   ('/login','UserController.showlogin')
+Route.post  ('/login', 'UserController.login')
 //Route.post('/login', 'UserController.postLogin')
 Route.get('/logout', 'UserController.logout')
 
@@ -51,6 +51,6 @@ Route.get('/movie/:id/show', 'MovieController.showMovie')
 
 Route.group('ajax', function () {
 
-  //Route.post   ('/login','UserController.ajaxLogin').as('a_login')
+  Route.post   ('/login','UserController.ajaxLogin').as('a_login')
   Route.get    ('/user/exists','UserController.checkUserExists').as('a_user_exists')
   }).prefix('/ajax')
