@@ -93,8 +93,8 @@ class ReviewController {
         }
         
 
-
-    if (req.currentUser.id !== review.user_id && !access) {
+    var isOwn = req.currentUser.id==review.user_id;
+    if (!isOwn && !access) {
       res.unauthorized('Access denied.')
       return
     }
@@ -104,7 +104,8 @@ class ReviewController {
     movie.rating = (movie.sum/movie.count).toFixed(0) | 0;
     yield movie.save()
     yield review.delete()
-    res.redirect('/reviews')
+    if(isOwn ) !req.ajax() ? res.redirect('/reviews') : res.send('ok')
+    else !req.ajax() ?res.route('movie', { id: movie.id })  : res.send('ok')
     }
 
    * show(req,res){

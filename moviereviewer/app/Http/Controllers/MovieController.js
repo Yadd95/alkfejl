@@ -187,7 +187,7 @@ class MovieController {
       yield curry.delete();
     }
     yield movie.delete()
-    res.redirect('/movies')
+    !req.ajax() ? res.redirect('/movies') : res.send('ok')
   }
   * showReviews(req,res){
     const id = req.param('id');

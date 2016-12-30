@@ -102,6 +102,7 @@ class UserController {
      try {
         const login = yield req.auth.attempt(username, password) 
              res.ok('ok')
+             
         } catch(error){
              res.status(403).send('denied')
         }

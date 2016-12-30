@@ -39,7 +39,7 @@
     </div>
     <hr>
     {% if adminaccess %}
-    <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="/delete_m/{{movie.id}}" class="btn btn-danger" >Delete</a></p>
+    <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="{{ 'movie_delete' | route({id: movie.id}) }}" class="btn btn-danger" >Delete</a></p>
     {% endif %}
   </div>
 </div>
