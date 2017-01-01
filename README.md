@@ -160,9 +160,13 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 ### Osztálymodell
 
 + **Adatmodell**
+
+
 ![Adatmodell](images/adatmodell.png)
 
 + **Adatbázisterv**
+
+
 ![Adatbázis](images/javaw_2017-01-01_20-54-28.png)
 
 # Implementáció
