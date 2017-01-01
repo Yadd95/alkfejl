@@ -149,7 +149,12 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 + **GET/movie/:id/show**: Egy film adatainak megtekintése
 
 ### Felhasználóifelület-modell
-
+![Főoldal](images/chrome_2017-01-01_19-54-38.png)
+![Filmlista](images/chrome_2017-01-01_19-54-48.png)
+![Filminfo](images/chrome_2017-01-01_19-54-53.png)
+![Filmhez szóló bemutatók](images/chrome_2017-01-01_19-54-58.png)
+![Bemutató](images/chrome_2017-01-01_19-55-07.png)
+![Bemutató készítés](images/chrome_2017-01-01_19-55-21.png)
 
 
 ### Osztálymodell
@@ -161,10 +166,56 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 + **Állapotdiagram**
 
 # Implementáció
-1. Fejlesztői környezet bemutatása
+## Fejlesztői környezet bemutatása
 
-2. Könyvtárstruktúrában lévő mappák funkciójának bemutatása
+### Felhasznált eszközök
+- Git verziókezelő
+- Node.js Javascript környezet
+- AdonisJS MVC keretrendszer
+- Github a projekt közzétételéhez
+- Sqlite3 adatbáziskezeő
 
+#### Git - GitHub
+* Telepítéshez: https://git-scm.com/
+* Githubos felhasználói fiók regisztrálása 
+
+### Összeállítás
+
+1. Node.js telepítése: https://nodejs.org/
+2. Projekt klónozása lokális gépre: git clone link.git
+3. A függőségek telepítése: npm i
+4. Indítás: npm start vagy npm run dev
+
+#### SQLite adatbáziskezelő
+
+- express-adminnal megtekinthető:
+  * Telepítés: npm i express-admin
+  * Konfigurálás / indítás: npm run sqladmin
+  * Adatbázis típusa: sqlite
+  * Adatbázisfájl: database/database.sqlite
+
+## Könyvtárstruktúrában lévő mappák funkciójának bemutatása
+
+* `app` Alkalmazás logika
+  * `Commands` ace parancsok
+  * `Http` HTTP specifikus alkalmazás logika
+    * `Controllers` HTTP kérések kezelése
+    * `Middleware` HTTP kérések kezelése előtt végrehajtandó
+  * `Listeners` Bejövő kérések figyelése
+  * `Model` Modell osztályok, logika, működés
+  * `Services` Komponensek
+  * `Traits` Modellek kiterjesztése
+* `bootstrap` Az app indulásához szükséges műveletek, konfigurációk
+* `config` Az app működését befolyásoló konfigurációs fájlok
+* `database` Adatbázissal kapcsolatos
+  * `migrations` Adatbázis migrációk, séma meghatározása
+  * `seeds` Adatbázis seederek, példa/tesztadatok beszúrása
+* `providers` Providerek
+* `public` A webszerver által közvetlenül kiszolgált fájlok
+* `resources` Az app által felhasznált egyéb fájlok
+  * `views` Nunjucks template fájlok
+* `storage` Felhasználók által feltöltött anyagok tárolására
+ 
 # Tesztelés
 
 ## Selenium IDE
