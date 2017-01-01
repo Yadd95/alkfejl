@@ -160,10 +160,10 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 ### Osztálymodell
 
 + **Adatmodell**
+![Adatmodell](images/adatmodell.png)
 
 + **Adatbázisterv**
 
-+ **Állapotdiagram**
 
 # Implementáció
 ## Fejlesztői környezet bemutatása
