@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3333/" />
+<title>Assert/Verify</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Assert/Verify</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>MovieReviewer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>MovieReviewer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//p[2]</td>
+	<td>Hope you will enjoy our webpage! Have fun reviewing! :)</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Film List</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=img.image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>Filter by genre:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=category_id</td>
+	<td>All Horror Comedy Action Fantasy Drama Documentary Sci-fi Art Crime Romance Educational Adventure</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Filter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.panel-heading</td>
+	<td>Show more Title: Lorem ipsum</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//p[2]</td>
+	<td>exact:Genre: Comedy</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=button.close</td>
+	<td>Show more</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.info</td>
+	<td>exact:Title: Lorem ipsum Director: Sit Doloremat Writers: Lorem Stars: Tom Cruise , Leonardo DiCaprio , others Origin: [LI] Year of release: 2011</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4</td>
+	<td>exact:Title: Lorem ipsum</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//h2[2]</td>
+	<td>exact:Plot:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//h2[2]</td>
+	<td>exact:Plot:</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.textpart</td>
+	<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique vestibulum felis quis faucibus. Aliquam vel sem vitae est placerat pellentesque. Donec accumsan felis vel sagittis lacinia. Sed vitae justo semper, luctus nisl vel, aliquam magna. Nunc sit amet urna rutrum, sollicitudin diam convallis, elementum augue. Donec vel auctor nulla. Vestibulum ullamcorper eros sapien, sit amet aliquam neque eleifend ut. Aenean et congue justo, eu tristique augue. Nunc faucibus magna eget justo aliquet, vitae facilisis elit accumsan. Fusce velit nunc, accumsan a ligula vel, scelerisque lacinia arcu. Aliquam mauris enim, tristique vel maximus quis, gravida sed turpis. Mauris erat magna, volutpat in consectetur et, ultricies sed tortor. Mauris molestie lorem ut pellentesque feugiat. Aenean libero odio, tempus eget ullamcorper et, finibus ac dolor. Aliquam placerat sit amet eros ut blandit. Donec maximus laoreet elit id gravida. Nunc augue tortor, pulvinar nec maximus vel, sollicitudin quis lectus. Aliquam non metus a dui ultricies tincidunt vel elementum urna. Cras volutpat felis quis maximus consectetur. Maecenas felis lectus, hendrerit a porttitor sagittis, tincidunt sit amet arcu. Aenean sit amet massa commodo, gravida massa laoreet, dictum odio. Quisque eleifend pharetra lectus a volutpat. Nullam vitae nulla augue. Mauris placerat ante id magna congue rutrum eu eget nisl. Curabitur nisl felis, porttitor eget tempor nec, pharetra condimentum arcu. Aenean eget bibendum leo. Praesent et purus quis urna commodo finibus cursus vitae nisi. Maecenas suscipit nisi hendrerit elit varius mollis. Etiam tristique felis odio. Nullam est turpis, sagittis vel libero sit amet, dictum iaculis leo. Proin gravida tempor orci, non aliquet tellus pharetra et. Aliquam vel rutrum tortor, vitae fringilla tellus. Nunc lacus arcu, ornare at nibh sit amet, vestibulum dignissim velit. Morbi ornare nec arcu a egestas. Nunc urna velit, mollis nec semper a, porta ut diam.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.textpart</td>
+	<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique vestibulum felis quis faucibus. Aliquam vel sem vitae est placerat pellentesque. Donec accumsan felis vel sagittis lacinia. Sed vitae justo semper, luctus nisl vel, aliquam magna. Nunc sit amet urna rutrum, sollicitudin diam convallis, elementum augue. Donec vel auctor nulla. Vestibulum ullamcorper eros sapien, sit amet aliquam neque eleifend ut. Aenean et congue justo, eu tristique augue. Nunc faucibus magna eget justo aliquet, vitae facilisis elit accumsan. Fusce velit nunc, accumsan a ligula vel, scelerisque lacinia arcu. Aliquam mauris enim, tristique vel maximus quis, gravida sed turpis. Mauris erat magna, volutpat in consectetur et, ultricies sed tortor. Mauris molestie lorem ut pellentesque feugiat. Aenean libero odio, tempus eget ullamcorper et, finibus ac dolor. Aliquam placerat sit amet eros ut blandit. Donec maximus laoreet elit id gravida. Nunc augue tortor, pulvinar nec maximus vel, sollicitudin quis lectus. Aliquam non metus a dui ultricies tincidunt vel elementum urna. Cras volutpat felis quis maximus consectetur. Maecenas felis lectus, hendrerit a porttitor sagittis, tincidunt sit amet arcu. Aenean sit amet massa commodo, gravida massa laoreet, dictum odio. Quisque eleifend pharetra lectus a volutpat. Nullam vitae nulla augue. Mauris placerat ante id magna congue rutrum eu eget nisl. Curabitur nisl felis, porttitor eget tempor nec, pharetra condimentum arcu. Aenean eget bibendum leo. Praesent et purus quis urna commodo finibus cursus vitae nisi. Maecenas suscipit nisi hendrerit elit varius mollis. Etiam tristique felis odio. Nullam est turpis, sagittis vel libero sit amet, dictum iaculis leo. Proin gravida tempor orci, non aliquet tellus pharetra et. Aliquam vel rutrum tortor, vitae fringilla tellus. Nunc lacus arcu, ornare at nibh sit amet, vestibulum dignissim velit. Morbi ornare nec arcu a egestas. Nunc urna velit, mollis nec semper a, porta ut diam.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.scores &gt; h3 &gt; strong</td>
+	<td>Average rating: 55%</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.scores &gt; h3 &gt; strong</td>
+	<td>Average rating: 55%</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Modify</td>
+	<td>Modify</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Modify</td>
+	<td>Modify</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Delete</td>
+	<td>Delete</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Delete</td>
+	<td>Delete</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=button.close</td>
+	<td>Reviews</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.close</td>
+	<td>Reviews</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h1.centered</td>
+	<td>Reviews for Lorem ipsum</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=New review</td>
+	<td>New review</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h3.panel-title</td>
+	<td>exact:Title: Lorem lorem. Ipsum at!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=button.close</td>
+	<td>Check out</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p</td>
+	<td>exact:Username: admin</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//p[3]</td>
+	<td>Number of reviews: 2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Reviews</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.centered</td>
+	<td>My Reviews</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=New review</td>
+	<td>New review</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h5.panel-title</td>
+	<td>exact:Created: 2016-11-25 21:23:03</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Modify</td>
+	<td>Modify</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Delete</td>
+	<td>Delete</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.close</td>
+	<td>Check out</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h3.panel-title</td>
+	<td>exact:Title: Lorem lorem. Ipsum at!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=New review</td>
+	<td>New review</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=button.close</td>
+	<td>Check out</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.panel-heading</td>
+	<td>exact:Title: Lorem lorem. Ipsum at! Created by: admin</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.panel.panel-info &gt; div.panel-body</td>
+	<td>Movie Information: Title: Lorem ipsum Director: Sit Doloremat Origin: [LI] Average rating: 55% <br /> <br /> Review: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique vestibulum felis quis faucibus. Aliquam vel sem vitae est placerat pellentesque. Donec accumsan felis vel sagittis lacinia. Sed vitae justo semper, luctus nisl vel, aliquam magna. Nunc sit amet urna rutrum, sollicitudin diam convallis, elementum augue. Donec vel auctor nulla. Vestibulum ullamcorper eros sapien, sit amet aliquam neque eleifend ut. Aenean et congue justo, eu tristique augue. Nunc faucibus magna eget justo aliquet, vitae facilisis elit accumsan. Fusce velit nunc, accumsan a ligula vel, scelerisque lacinia arcu. Aliquam mauris enim, tristique vel maximus quis, gravida sed turpis. Mauris erat magna, volutpat in consectetur et, ultricies sed tortor. Mauris molestie lorem ut pellentesque feugiat. Aenean libero odio, tempus eget ullamcorper et, finibus ac dolor. Aliquam placerat sit amet eros ut blandit. Donec maximus laoreet elit id gravida. Nunc augue tortor, pulvinar nec maximus vel, sollicitudin quis lectus. Aliquam non metus a dui ultricies tincidunt vel elementum urna. Cras volutpat felis quis maximus consectetur. Maecenas felis lectus, hendrerit a porttitor sagittis, tincidunt sit amet arcu. Aenean sit amet massa commodo, gravida massa laoreet, dictum odio. Quisque eleifend pharetra lectus a volutpat. Nullam vitae nulla augue. Mauris placerat ante id magna congue rutrum eu eget nisl. Curabitur nisl felis, porttitor eget tempor nec, pharetra condimentum arcu. Aenean eget bibendum leo. Praesent et purus quis urna commodo finibus cursus vitae nisi. Maecenas suscipit nisi hendrerit elit varius mollis. Etiam tristique felis odio. Nullam est turpis, sagittis vel libero sit amet, dictum iaculis leo. Proin gravida tempor orci, non aliquet tellus pharetra et. Aliquam vel rutrum tortor, vitae fringilla tellus. Nunc lacus arcu, ornare at nibh sit amet, vestibulum dignissim velit. Morbi ornare nec arcu a egestas. Nunc urna velit, mollis nec semper a, porta ut diam. Praesent ullamcorper porta sem, in mattis risus volutpat id. Cras posuere sapien eu risus tincidunt imperdiet. Aenean euismod orci vitae suscipit viverra. Ut turpis sem, venenatis vel sem vitae, luctus commodo erat. Integer ac metus sagittis, cursus ligula ut, ullamcorper metus. Duis in diam id est egestas ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum tincidunt vel ipsum id congue. Vivamus semper, nisl vitae laoreet rhoncus, erat tellus facilisis mi, ac efficitur sapien nisl quis nulla. Aliquam pretium tristique dui non dignissim. Phasellus sit amet dui vehicula, pellentesque mauris at, pharetra turpis. Suspendisse tristique orci est, at ultrices arcu tincidunt at. Fusce eu urna et tellus rutrum sodales eu nec eros. Nulla dapibus dui at erat consequat, vel facilisis nibh consectetur. Maecenas ornare lorem sit amet egestas congue. Nulla suscipit neque iaculis enim bibendum, vitae tincidunt erat tristique. Nullam lacus ex, porttitor eget mauris eu, euismod ultricies dui. Morbi in feugiat felis. Vivamus pulvinar tincidunt gravida. Fusce sed libero sed nunc venenatis aliquam. In pellentesque orci tortor, a dictum purus suscipit in. Vestibulum consectetur id tortor vitae auctor. Vestibulum in metus tempor, tristique lectus eget, condimentum lorem. Praesent est mi, pretium eget diam ut, iaculis pulvinar risus. Aliquam fermentum lacus quis ante pretium, at elementum nisi lacinia. Pellentesque vel interdum tortor, nec commodo ante. Nullam tempus, nulla sed congue egestas, neque velit hendrerit enim, nec fermentum purus enim id ante. Praesent laoreet tortor at ipsum lacinia lobortis. Duis sit amet eros posuere, consequat velit nec, maximus augue. Etiam ornare justo et arcu imperdiet lacinia. Etiam aliquam porta orci vitae bibendum. Sed id mauris id est placerat scelerisque sit amet eu justo. Curabitur efficitur tortor eget diam suscipit dignissim. Proin ullamcorper nunc eu dui fringilla varius. Suspendisse luctus arcu a enim sodales dictum ut ac ex. Aliquam erat volutpat. Fusce ac magna sed leo sodales molestie nec pulvinar nisl. Aliquam eros eros, ullamcorper sit amet dapibus ut, lobortis id tortor. Etiam at pellentesque leo. Nam vel risus lacinia, tempor lorem quis, dictum felis. Nullam a congue erat, quis vehicula velit. Vestibulum laoreet pharetra elit et porta. Morbi vitae nulla at ipsum faucibus dictum et in metus. Fusce sodales sagittis auctor. Quisque faucibus, mi ornare efficitur congue, tellus elit vehicula diam, eu ullamcorper diam libero eu lectus. Praesent dapibus semper nunc quis porta. <br /> <br /> Scores: Sound: 5 Visuals: 8 Setting: 7 Characters: 6 Plot: 5 Acting: 2 Overall rating: 55% <br /> <br /> Modify Delete<br /> <br /> Created: 2016-11-25 21:23:03 Last updated: 2016-11-25 21:23:03</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.info</td>
+	<td>exact:Title: Lorem ipsum Director: Sit Doloremat Origin: [LI] Average rating: 55%</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//h4[2]</td>
+	<td>exact:Director: Sit Doloremat</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//h4[4]</td>
+	<td>Average rating: 55%</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//h4[4]</td>
+	<td>Average rating: 55%</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.textpart</td>
+	<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique vestibulum felis quis faucibus. Aliquam vel sem vitae est placerat pellentesque. Donec accumsan felis vel sagittis lacinia. Sed vitae justo semper, luctus nisl vel, aliquam magna. Nunc sit amet urna rutrum, sollicitudin diam convallis, elementum augue. Donec vel auctor nulla. Vestibulum ullamcorper eros sapien, sit amet aliquam neque eleifend ut. Aenean et congue justo, eu tristique augue. Nunc faucibus magna eget justo aliquet, vitae facilisis elit accumsan. Fusce velit nunc, accumsan a ligula vel, scelerisque lacinia arcu. Aliquam mauris enim, tristique vel maximus quis, gravida sed turpis. Mauris erat magna, volutpat in consectetur et, ultricies sed tortor. Mauris molestie lorem ut pellentesque feugiat. Aenean libero odio, tempus eget ullamcorper et, finibus ac dolor. Aliquam placerat sit amet eros ut blandit. Donec maximus laoreet elit id gravida. Nunc augue tortor, pulvinar nec maximus vel, sollicitudin quis lectus. Aliquam non metus a dui ultricies tincidunt vel elementum urna. Cras volutpat felis quis maximus consectetur. Maecenas felis lectus, hendrerit a porttitor sagittis, tincidunt sit amet arcu. Aenean sit amet massa commodo, gravida massa laoreet, dictum odio. Quisque eleifend pharetra lectus a volutpat. Nullam vitae nulla augue. Mauris placerat ante id magna congue rutrum eu eget nisl. Curabitur nisl felis, porttitor eget tempor nec, pharetra condimentum arcu. Aenean eget bibendum leo. Praesent et purus quis urna commodo finibus cursus vitae nisi. Maecenas suscipit nisi hendrerit elit varius mollis. Etiam tristique felis odio. Nullam est turpis, sagittis vel libero sit amet, dictum iaculis leo. Proin gravida tempor orci, non aliquet tellus pharetra et. Aliquam vel rutrum tortor, vitae fringilla tellus. Nunc lacus arcu, ornare at nibh sit amet, vestibulum dignissim velit. Morbi ornare nec arcu a egestas. Nunc urna velit, mollis nec semper a, porta ut diam. Praesent ullamcorper porta sem, in mattis risus volutpat id. Cras posuere sapien eu risus tincidunt imperdiet. Aenean euismod orci vitae suscipit viverra. Ut turpis sem, venenatis vel sem vitae, luctus commodo erat. Integer ac metus sagittis, cursus ligula ut, ullamcorper metus. Duis in diam id est egestas ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum tincidunt vel ipsum id congue. Vivamus semper, nisl vitae laoreet rhoncus, erat tellus facilisis mi, ac efficitur sapien nisl quis nulla. Aliquam pretium tristique dui non dignissim. Phasellus sit amet dui vehicula, pellentesque mauris at, pharetra turpis. Suspendisse tristique orci est, at ultrices arcu tincidunt at. Fusce eu urna et tellus rutrum sodales eu nec eros. Nulla dapibus dui at erat consequat, vel facilisis nibh consectetur. Maecenas ornare lorem sit amet egestas congue. Nulla suscipit neque iaculis enim bibendum, vitae tincidunt erat tristique. Nullam lacus ex, porttitor eget mauris eu, euismod ultricies dui. Morbi in feugiat felis. Vivamus pulvinar tincidunt gravida. Fusce sed libero sed nunc venenatis aliquam. In pellentesque orci tortor, a dictum purus suscipit in. Vestibulum consectetur id tortor vitae auctor. Vestibulum in metus tempor, tristique lectus eget, condimentum lorem. Praesent est mi, pretium eget diam ut, iaculis pulvinar risus. Aliquam fermentum lacus quis ante pretium, at elementum nisi lacinia. Pellentesque vel interdum tortor, nec commodo ante. Nullam tempus, nulla sed congue egestas, neque velit hendrerit enim, nec fermentum purus enim id ante. Praesent laoreet tortor at ipsum lacinia lobortis. Duis sit amet eros posuere, consequat velit nec, maximus augue. Etiam ornare justo et arcu imperdiet lacinia. Etiam aliquam porta orci vitae bibendum. Sed id mauris id est placerat scelerisque sit amet eu justo. Curabitur efficitur tortor eget diam suscipit dignissim. Proin ullamcorper nunc eu dui fringilla varius. Suspendisse luctus arcu a enim sodales dictum ut ac ex. Aliquam erat volutpat. Fusce ac magna sed leo sodales molestie nec pulvinar nisl. Aliquam eros eros, ullamcorper sit amet dapibus ut, lobortis id tortor. Etiam at pellentesque leo. Nam vel risus lacinia, tempor lorem quis, dictum felis. Nullam a congue erat, quis vehicula velit. Vestibulum laoreet pharetra elit et porta. Morbi vitae nulla at ipsum faucibus dictum et in metus. Fusce sodales sagittis auctor. Quisque faucibus, mi ornare efficitur congue, tellus elit vehicula diam, eu ullamcorper diam libero eu lectus. Praesent dapibus semper nunc quis porta.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.textpart</td>
+	<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique vestibulum felis quis faucibus. Aliquam vel sem vitae est placerat pellentesque. Donec accumsan felis vel sagittis lacinia. Sed vitae justo semper, luctus nisl vel, aliquam magna. Nunc sit amet urna rutrum, sollicitudin diam convallis, elementum augue. Donec vel auctor nulla. Vestibulum ullamcorper eros sapien, sit amet aliquam neque eleifend ut. Aenean et congue justo, eu tristique augue. Nunc faucibus magna eget justo aliquet, vitae facilisis elit accumsan. Fusce velit nunc, accumsan a ligula vel, scelerisque lacinia arcu. Aliquam mauris enim, tristique vel maximus quis, gravida sed turpis. Mauris erat magna, volutpat in consectetur et, ultricies sed tortor. Mauris molestie lorem ut pellentesque feugiat. Aenean libero odio, tempus eget ullamcorper et, finibus ac dolor. Aliquam placerat sit amet eros ut blandit. Donec maximus laoreet elit id gravida. Nunc augue tortor, pulvinar nec maximus vel, sollicitudin quis lectus. Aliquam non metus a dui ultricies tincidunt vel elementum urna. Cras volutpat felis quis maximus consectetur. Maecenas felis lectus, hendrerit a porttitor sagittis, tincidunt sit amet arcu. Aenean sit amet massa commodo, gravida massa laoreet, dictum odio. Quisque eleifend pharetra lectus a volutpat. Nullam vitae nulla augue. Mauris placerat ante id magna congue rutrum eu eget nisl. Curabitur nisl felis, porttitor eget tempor nec, pharetra condimentum arcu. Aenean eget bibendum leo. Praesent et purus quis urna commodo finibus cursus vitae nisi. Maecenas suscipit nisi hendrerit elit varius mollis. Etiam tristique felis odio. Nullam est turpis, sagittis vel libero sit amet, dictum iaculis leo. Proin gravida tempor orci, non aliquet tellus pharetra et. Aliquam vel rutrum tortor, vitae fringilla tellus. Nunc lacus arcu, ornare at nibh sit amet, vestibulum dignissim velit. Morbi ornare nec arcu a egestas. Nunc urna velit, mollis nec semper a, porta ut diam. Praesent ullamcorper porta sem, in mattis risus volutpat id. Cras posuere sapien eu risus tincidunt imperdiet. Aenean euismod orci vitae suscipit viverra. Ut turpis sem, venenatis vel sem vitae, luctus commodo erat. Integer ac metus sagittis, cursus ligula ut, ullamcorper metus. Duis in diam id est egestas ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum tincidunt vel ipsum id congue. Vivamus semper, nisl vitae laoreet rhoncus, erat tellus facilisis mi, ac efficitur sapien nisl quis nulla. Aliquam pretium tristique dui non dignissim. Phasellus sit amet dui vehicula, pellentesque mauris at, pharetra turpis. Suspendisse tristique orci est, at ultrices arcu tincidunt at. Fusce eu urna et tellus rutrum sodales eu nec eros. Nulla dapibus dui at erat consequat, vel facilisis nibh consectetur. Maecenas ornare lorem sit amet egestas congue. Nulla suscipit neque iaculis enim bibendum, vitae tincidunt erat tristique. Nullam lacus ex, porttitor eget mauris eu, euismod ultricies dui. Morbi in feugiat felis. Vivamus pulvinar tincidunt gravida. Fusce sed libero sed nunc venenatis aliquam. In pellentesque orci tortor, a dictum purus suscipit in. Vestibulum consectetur id tortor vitae auctor. Vestibulum in metus tempor, tristique lectus eget, condimentum lorem. Praesent est mi, pretium eget diam ut, iaculis pulvinar risus. Aliquam fermentum lacus quis ante pretium, at elementum nisi lacinia. Pellentesque vel interdum tortor, nec commodo ante. Nullam tempus, nulla sed congue egestas, neque velit hendrerit enim, nec fermentum purus enim id ante. Praesent laoreet tortor at ipsum lacinia lobortis. Duis sit amet eros posuere, consequat velit nec, maximus augue. Etiam ornare justo et arcu imperdiet lacinia. Etiam aliquam porta orci vitae bibendum. Sed id mauris id est placerat scelerisque sit amet eu justo. Curabitur efficitur tortor eget diam suscipit dignissim. Proin ullamcorper nunc eu dui fringilla varius. Suspendisse luctus arcu a enim sodales dictum ut ac ex. Aliquam erat volutpat. Fusce ac magna sed leo sodales molestie nec pulvinar nisl. Aliquam eros eros, ullamcorper sit amet dapibus ut, lobortis id tortor. Etiam at pellentesque leo. Nam vel risus lacinia, tempor lorem quis, dictum felis. Nullam a congue erat, quis vehicula velit. Vestibulum laoreet pharetra elit et porta. Morbi vitae nulla at ipsum faucibus dictum et in metus. Fusce sodales sagittis auctor. Quisque faucibus, mi ornare efficitur congue, tellus elit vehicula diam, eu ullamcorper diam libero eu lectus. Praesent dapibus semper nunc quis porta.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.scores</td>
+	<td>exact:Sound: 5 Visuals: 8 Setting: 7 Characters: 6 Plot: 5 Acting: 2 Overall rating: 55%</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Modify</td>
+	<td>Modify</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Delete</td>
+	<td>Delete</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
