@@ -161,8 +161,39 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 + **Állapotdiagram**
 
 # Implementáció
+1. Fejlesztői környezet bemutatása
+
+2. Könyvtárstruktúrában lévő mappák funkciójának bemutatása
 
 # Tesztelés
+
+## Selenium IDE
+
+Az UI tesztek a Selenium IDE Firefox pluginnel készültek, és ezzel el is indíthatók. Ez egy olyan rendszer, ami felhasználói tevékenységet szimulál a böngészőben (pl. kattintás, gépelés, stb).
+
+Adjuk hozzá a Firefoxhoz a fenti bővítményt. A bővítmény ablakában a Base URL helyére írjuk be az app URL-jét (alapesetben http://localhost:3333/).
+
+Tesztek futtatásához először nyissunk meg egy test suit-ot a tests/selenium könyvtárból: Fájl >> Open Test Suite
+(a kiterjesztés nélküli fájlok a suite-ok, a .html fájlok pedig a test case-ek)
+
+A bal oldali listában megjelennek a test case-ek. A Play entire test suite gombbal lejátszhatjuk az összeset egymás után, a Play current test case gomb pedig az aktuálisan kijelölt teszteset elindítására szolgál.
+
+## Tesztek
+* loginSuite
+- Login teszt
+- Logout teszt
+- Bad Login teszt
+
+* AssertVer
+- Assert-Verify Teszt
+
+* reviewLogic
+- Ismertető készítése teszt
+- Ismertető törlése teszt
+
+* movieCheck
+- Film bejegyzése teszt
+- Film törlése teszt 
 
 # Felhasználói dokumentáció
 
