@@ -14,6 +14,7 @@ Egy egyszerű (imdb-szerű) filmelemző oldal, ahol filmekről lehet bemutatóka
 * .env.example átnevezése .env-re, és tartalmának ellenőrzése
 * Indítás: npm start vagy npm run dev
 
+# Követelményanalízis
 
 ## Funkcionális elvárások
 
@@ -73,7 +74,7 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 Értékelés: Egy egész szám 1-től 5-ig, amivel a film adott jellemzőjét(a fentebb felsoroltakra bontva) osztályozza a felhasználó
 
 
-## Tervezés
+# Tervezés
 ### Felépítés
 
 **Oldaltérkép:**
@@ -149,8 +150,19 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 
 ### Felhasználóifelület-modell
 
-+ **Oldalvázlatok**
+
 
 ### Osztálymodell
 
 + **Adatmodell**
+
++ **Adatbázisterv**
+
++ **Állapotdiagram**
+
+# Implementáció
+
+# Tesztelés
+
+# Felhasználói dokumentáció
+
