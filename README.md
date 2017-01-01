@@ -163,7 +163,7 @@ Filmismertető: Egy hosszabb terjedelmű szöveges véleménykifejzés egy filmr
 ![Adatmodell](images/adatmodell.png)
 
 + **Adatbázisterv**
-
+![Adatbázis](images/javaw_2017-01-01_20-54-28.png)
 
 # Implementáció
 ## Fejlesztői környezet bemutatása
