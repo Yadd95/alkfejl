@@ -44,8 +44,8 @@ class UserController {
                 return
             }
         } catch(error){
-            yield req.withOnly('email', 'password').andWith({errors: true}).flash()
-            res.redirect('/')
+            yield req.withOnly('username', 'password').andWith({errors: true}).flash()
+            res.redirect('/login')
         }
     }
 
@@ -56,6 +56,9 @@ class UserController {
 
     * register (req, res){
          yield res.sendView('register');
+    }
+    * showlogin(req, res){
+         yield res.sendView('login');
     }
 
     * store (req, res){
@@ -73,7 +76,37 @@ class UserController {
         yield req.withAll().andWith({regmessage: true}).flash()
         res.redirect('/')
     }
+    
+    * checkUserExists(req, res) {
 
+    let user;
+    if (req.input('username')) {
+      user = yield User.findBy('username', req.input('username'))
+    }
+    else {
+      user = yield User.findBy('email', req.input('email'))
+    }
+
+    if (user) {
+      res.status(400).send('exists')
+    }
+    else {
+      res.send('ok')
+    }
+  }
+  * ajaxLogin(req, res) {
+    const username = req.input('username')
+    const password = req.input('password')
+
+
+     try {
+        const login = yield req.auth.attempt(username, password) 
+             res.ok('ok')
+             
+        } catch(error){
+             res.status(403).send('denied')
+        }
+  }
 }
 
 module.exports = UserController

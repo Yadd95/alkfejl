@@ -25,7 +25,7 @@
     <p>Average Rating: {{ movie.rating}}% </p>
     {% endif %}
     {% endfor %}
-    <p><a href="/modify_r/{{review.id}}" class="btn btn-warning" >Modify</a> <a href="/delete_r/{{review.id}}" class="btn btn-danger" >Delete</a></p>
+    <p><a href="/modify_r/{{review.id}}" class="btn btn-warning" >Modify</a> <a href="{{ 'review_delete' | route({id: review.id}) }}" class="btn btn-danger" >Delete</a></p>
   </div>
 </div>
 

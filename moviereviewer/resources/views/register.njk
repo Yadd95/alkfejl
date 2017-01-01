@@ -1,6 +1,7 @@
 {% extends 'master' %}
 {% set active_page = "register" %}
 
+
 {% block content %}
 <div class="formu">
 
@@ -9,38 +10,45 @@
 {{ error.message }}
 </div>
    {% endfor %}
-
-{{ form.open({action:'UserController.store'}) }}
+<form class="form-horizontal" method="post" data-toggle="validator">
+    {{ csrfField }}
  <fieldset>
     <legend>Registration</legend>
-  <div class="form-pad">
+  <div class="form-group">
     {{ form.label('Username','Username', {class: 'col-lg-2 control-label'}) }}
     <div class="col-lg-10">
-     {{ form.text('username', old('username'), {class: "form-control" }) }}
+      <input required type="text" class="form-control" id="username" name="username" placeholder="Name" value="{{old('username')}}" data-remote="{{ 'a_user_exists' | route() }}" data-remote-error="Username is already in use.">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
+    
     </div>
   </div>
-
-  <div class="form-pad">
+  <div class="form-group">
     {{ form.label('Email','E-mail', {class: 'col-lg-2 control-label'}) }}
     <div class="col-lg-10">
-    {{ form.text('email', old('email'), {class: "form-control" }) }}
-    </div>
+    <input required type="email" class="form-control" id="email" name="email" placeholder="valami@etc.hu" value="{{old('email')}}" data-remote="{{ 'a_user_exists' | route() }}" data-remote-error="Email address already in use.">
+    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    <div class="help-block with-errors"></div>
   </div>
-
-  <div class="form-pad">
+  </div>
+  <div class="form-group">
     {{ form.label('Password','Password', {class: 'col-lg-2 control-label'}) }}
     <div class="col-lg-10">
-    {{ form.password('password', '', {class: "form-control" }) }}
-    </div>
+    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required/>
+    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    <div class="help-block with-errors"></div>
   </div>
-  <div class="form-pad">
+  </div>
+  <div class="form-group">
     <label for="password_confirm" class="col-lg-2 control-label">Confirm password</label>
     <div class="col-lg-10">
-      <input type="password" class="form-control" id="password_confirm" name="password_confirm" value="">
-    </div>
+      <input type="password" class="form-control" name="password_confirm" id="password_confirm"
+             required data-match="#password" data-match-error="A két jelszó nem egyezik.">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
   </div>
-
-    <div class="form-pad">
+  </div>
+    <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -50,4 +58,7 @@
 
   {{ form.close() }}
   </div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
 {% endblock %}

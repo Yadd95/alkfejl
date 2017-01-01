@@ -7,10 +7,11 @@
 
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-<nav class="navbar navbar-default">
+<div id="navbar">
+<nav  class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       {% if currentUser %}
@@ -31,14 +32,8 @@
         <li><a href="/logout">Logout</a></li>
 
         {% else %}
+      <li><a href="/login" id="btn-login">Login</a></li>
 
-        <form  method="GET" action="/login" enctype="application/x-www-form-urlencoded" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" name='username' class="form-control" placeholder="Username">
-          <input type="password" name='password' class="form-control" placeholder="Password">          
-        </div>
-        <button type="submit" class="btn btn-default">Login</button>
-       </form>
 
         <li {% if active_page == "register" %} class="active"{% endif
          %}><a href="/register">Register</a></li>
@@ -57,8 +52,32 @@
     </div>
   </div>
 </nav>
+</div>
 <section>
  {% block content %}{% endblock %}
 </section>
+
+    {% if not currentUser %}
+    <!-- LOGIN MODAL -->
+    <div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="login-modal">
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">Belépés</div>
+          <div class="modal-body">
+            <div class="alert alert-danger">A felhasználónév vagy jelszó nem stimmel!</div>
+            <div class="form-area"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% if not currentUser %}
+    <script src="/scripts/popup-login.js"></script>
+    {% endif %}
+
+    {% block scripts %}{% endblock %}
 </body>
 </html>
