@@ -77,7 +77,7 @@ class UserController {
         res.redirect('/')
     }
     
-    * checkUserExists(req, resp) {
+    * checkUserExists(req, res) {
 
     let user;
     if (req.input('username')) {
@@ -88,10 +88,10 @@ class UserController {
     }
 
     if (user) {
-      resp.status(400).send('exists')
+      res.status(400).send('exists')
     }
     else {
-      resp.send('ok')
+      res.send('ok')
     }
   }
   * ajaxLogin(req, res) {

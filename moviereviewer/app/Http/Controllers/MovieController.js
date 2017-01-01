@@ -469,7 +469,19 @@ class MovieController {
         });
 
     }
-  
+    * checkMovieExists(req, res) {
+
+    let movie;
+    if (req.input('title')) {
+      movie = yield Movie.findBy('title', req.input('title'))
+    }
+    if (movie) {
+      res.status(400).send('exists')
+    }
+    else {
+      res.send('ok')
+    }
+  }
 
     * movies(req,res){
         const categories = yield Category.all()

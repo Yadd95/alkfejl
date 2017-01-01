@@ -9,37 +9,49 @@
 </div>
 {% endfor %}
 <div class="content">
-  {{ form.open({action: 'MovieController.store'}) }}
+  <form class="form-horizontal" method="post" data-toggle="validator">
 
     {{ csrfField }}
     <div class="smallerarea">
     <fieldset class="form-group">
       {{ form.label('Title') }}
-      {{ form.text('title', null, { class: 'form-control' }) }}
+      <input required type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{old('title')}}" data-remote="{{ 'a_movie_exists' | route() }}" data-remote-error="This movie is already in the database. If this is a title of a different movie, which happens to be the same as a previously added one, please use the year of release in the title to differentiate.">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </fieldset>
 
     <fieldset class="form-group">
       {{ form.label('Director') }}
-      {{ form.text('director', null, { class: 'form-control' }) }}
+      <input type="text" name="director" class="form-control" id="director" placeholder="John Doe" value="{{old('director')}}" required/>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </fieldset>
     <div class="twocharcode">
     <fieldset class="form-group">
       {{ form.label('Origin') }}
-      <input type="text" name="origin" class="form-control" id="origin" maxlength="2" />
+      <input type="text" name="origin" placeholder="US, HU etc." class="form-control" id="origin" maxlength="2" value="{{old('origin')}}" required/>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </fieldset>
         <fieldset class="form-group">
       {{ form.label('Year of release') }}
-           <input type="text" name="release" class="form-control" id="release" maxlength="4" />
+           <input type="text" name="release" class="form-control" id="release" maxlength="4" placeholder="2000" value="{{old('release')}}" required/>
+           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+           <div class="help-block with-errors"></div>
     </fieldset>
 
     </div>
       <fieldset class="form-group">
       {{ form.label('Writers') }}
-      {{ form.text('writer', null, { class: 'form-control' }) }}
+      <input type="text" name="writer" class="form-control" id="writer" placeholder="John Doe" value="{{old('writer')}}" required/>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </fieldset>
     <fieldset class="form-group">
       {{ form.label('Stars') }}
-      {{ form.text('stars', null, { class: 'form-control' }) }}
+      <input type="text" class="form-control" name="stars" id="stars" placeholder="John Doe, Jim Doe" value="{{old('writer')}}" required/>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </fieldset>
 
        </fieldset>
@@ -60,11 +72,16 @@
     <div>
     <fieldset class="form-group">
       {{ form.label('Plot') }}
-       <textarea rows="25" name="plot" class="form-control" id="plot"></textarea>
+      <textarea rows="25" name="plot" class="form-control" id="plot" placeholder="A short summary" required></textarea>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </fieldset>
     {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
       {{ form.resetButton('Clear','publish', { class: 'btn btn-warning btn-block' })}}
 
   {{ form.close() }}
   </div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
 {% endblock %}
