@@ -180,20 +180,20 @@ A bal oldali listában megjelennek a test case-ek. A Play entire test suite gomb
 
 ## Tesztek
 * loginSuite
-- Login teszt
-- Logout teszt
-- Bad Login teszt
+  - Login teszt
+  - Logout teszt
+  - Bad Login teszt
 
 * AssertVer
-- Assert-Verify Teszt
+  - Assert-Verify Teszt
 
 * reviewLogic
-- Ismertető készítése teszt
-- Ismertető törlése teszt
+  - Ismertető készítése teszt
+  - Ismertető törlése teszt
 
 * movieCheck
-- Film bejegyzése teszt
-- Film törlése teszt 
+  - Film bejegyzése teszt
+  - Film törlése teszt 
 
 # Felhasználói dokumentáció
 
