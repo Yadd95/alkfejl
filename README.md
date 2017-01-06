@@ -251,4 +251,22 @@ A bal oldali listában megjelennek a test case-ek. A Play entire test suite gomb
   - Film törlése teszt 
 
 # Felhasználói dokumentáció
+Futtatáshoz szükséges operációs rendszer: Tetszőleges operációs rendszer
+
+A futtatáshoz szükséges hardver: Operációs rendszerek szerint megadva
+
+Egyéb követelmények: Internet böngésző telepítése, JavaScript ajánlott
+
+Program használata:
+
+1. Böngészőben nyissuk meg a főoldalt
+2. Ha felhasználóként szeretnénk használni, akkor a jobb felső sarokban kattintsunk a Bejelentkezés feliratra
+* Vagy, ha még nem rendelkezünk fiókkal, akkor a regisztrációra.
+3. A felső sáv bal oldalán található film listára kattintva elérhetővé válnak az adatbázisban lévő filmek.
+4. Itt egy filmet kiválasztva, és a Show More-ra kattintva átjutunk az adott film adatlapjára.
+5. Itt a jobb felső sarokban a Reviews-ra kattintva megtekinthetjük a hozzá tartozó Bemutatókat.
+6. Ugyanezen oldalon a New Review gombbal (ha be vagyunk jelentkezve) saját review írásába kezdhetünk.
+* Ez a funkció a felső sáv My Reviews menüpontján belül is elérhető
+* A saját review-inkat tudjuk módosítani és törölni az ennek megfelelő sárga Modify és piros Delete gombokkal.
+
 
