@@ -2,7 +2,7 @@
 
 {% extends 'master' %}
 {% set active_page = "movies" %}
-
+{% from 'confirm.njk' import m as confirm %}
 {% block content %}
 
 
@@ -56,7 +56,7 @@
     <p>Average Overall Rating: {{ movie.rating}}% </p>
     
     {% if adminaccess %}
-    <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="{{ 'movie_delete' | route({id: movie.id}) }}" class="btn btn-danger" >Delete</a></p>
+    <p><a href="/modify_m/{{movie.id}}" class="btn btn-warning" >Modify</a> <a href="{{ 'movie_delete' | route({id: movie.id}) }}" class="btn btn-danger btn-xs btn-movie-delete" data-redirect="{{ 'movies' }}">Delete</a></p>
     {% endif %}
   </div>
 </div>
@@ -66,4 +66,13 @@
 {% endfor %}   
 
 </div>
+{{ confirm() }}
+{{ csrfField | safe }}
+{% endblock %}
+{% block scripts %}
+<!-- buttons -->
+<script src="/scripts/delete-handle.js"></script>
+<script>
+  $('.btn-movie-delete').on('click', btnMovieDelete_click)
+</script>
 {% endblock %}
