@@ -2,7 +2,7 @@
 
 {% extends 'master' %}
 {% set active_page = "reviews" %}
-
+{% from 'confirm.njk' import m as confirm %}
 {% block content %}
 <div class="panel-body">
 <h1 class="centered">My Reviews</h1>
@@ -25,7 +25,7 @@
     <p>Average Rating: {{ movie.rating}}% </p>
     {% endif %}
     {% endfor %}
-    <p><a href="/modify_r/{{review.id}}" class="btn btn-warning" >Modify</a> <a href="{{ 'review_delete' | route({id: review.id}) }}" class="btn btn-danger" >Delete</a></p>
+    <p><a href="/modify_r/{{review.id}}" class="btn btn-warning" >Modify</a> <a href="{{ 'review_delete' | route({id: review.id}) }}" class="btn btn-danger btn-xs btn-review-delete" data-redirect="{{ 'reviews'}}">Delete</a></p>
   </div>
 </div>
 
@@ -34,4 +34,14 @@
 {% endfor %}   
 
 </div>
+{{ confirm() }}
+{{ csrfField | safe }}
+{% endblock %}
+
+{% block scripts %}
+<!-- buttons -->
+<script src="/scripts/delete-handle.js"></script>
+<script>
+  $('.btn-review-delete').on('click', btnReviewDelete_click)
+</script>
 {% endblock %}
